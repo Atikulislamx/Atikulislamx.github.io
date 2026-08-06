@@ -1,0 +1,6 @@
+{
+  "_comment": "Appended automatically by scripts/lib/image-generator.js to every prompt sent to the image API. Not a standalone asset.",
+  "palette": ["#0F2A4A", "#1B4965", "#2EC4B6", "#F8FAFC", "#FFFFFF", "#101828"],
+  "styleConstraints": "Minimal, abstract, geometric vector illustration. Premium consultancy/editorial tone. Use only the Trusted Slate palette (deep navy #0F2A4A, steel blue #1B4965, cyan-teal #2EC4B6 as a sparing accent, light neutrals #F8FAFC/#FFFFFF, near-black #101828 for fine line detail). Strictly avoid: neon or glow effects, 'hacker'/Matrix/terminal-code aesthetics, padlock icons, hoodie figures, photorealism, clip art, cartoon styles, generic stock-photo composition.",
+  "layeredInstruction": "When layered=true, request the output as separate named SVG groups (e.g., <g id=\"layer-bg\">, <g id=\"layer-mid\">, <g id=\"layer-accent\">) so individual layers can be targeted independently for CSS/JS animation (parallax, subtle motion, hover states) without needing to re-flatten or re-trace the artwork."
+}

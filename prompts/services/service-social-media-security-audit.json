@@ -1,0 +1,18 @@
+{
+  "id": "service-social-media-security-audit",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "service-social-media-security-audit.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": {
+    "width": 320,
+    "height": 320,
+    "scalable": true
+  },
+  "prompt": "Minimal abstract geometric line-art illustration of a single connected node within a small network, navy and steel blue palette with a subtle teal accent, premium and understated, plenty of negative space, no glow, no neon, no photorealism. emphasize a node with a magnifying/focus ring motif, abstract not literal.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "'Social Media Security Audit' service page \u2014 supporting illustration in 'My Approach' section"
+}

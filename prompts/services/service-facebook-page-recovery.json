@@ -1,0 +1,18 @@
+{
+  "id": "service-facebook-page-recovery",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "service-facebook-page-recovery.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": {
+    "width": 320,
+    "height": 320,
+    "scalable": true
+  },
+  "prompt": "Minimal abstract geometric line-art illustration of a single connected node within a small network, navy and steel blue palette with a subtle teal accent, premium and understated, plenty of negative space, no glow, no neon, no photorealism. emphasize a single node being reconnected to a network.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "'Facebook Page Recovery' service page \u2014 supporting illustration in 'My Approach' section"
+}

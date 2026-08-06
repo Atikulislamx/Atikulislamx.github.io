@@ -1,0 +1,18 @@
+{
+  "id": "service-business-verification-guidance",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "service-business-verification-guidance.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": {
+    "width": 320,
+    "height": 320,
+    "scalable": true
+  },
+  "prompt": "Minimal abstract geometric line-art illustration of a single connected node within a small network, navy and steel blue palette with a subtle teal accent, premium and understated, plenty of negative space, no glow, no neon, no photorealism. emphasize a checkmark-adjacent abstract line form, not a literal checkmark icon.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "'Business Verification Guidance' service page \u2014 supporting illustration in 'My Approach' section"
+}

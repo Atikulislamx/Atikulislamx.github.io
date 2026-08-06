@@ -1,0 +1,18 @@
+{
+  "id": "service-meta-business-manager-recovery",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "service-meta-business-manager-recovery.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": {
+    "width": 320,
+    "height": 320,
+    "scalable": true
+  },
+  "prompt": "Minimal abstract geometric line-art illustration of a single connected node within a small network, navy and steel blue palette with a subtle teal accent, premium and understated, plenty of negative space, no glow, no neon, no photorealism. emphasize multiple connected nodes converging to one central node.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "'Meta Business Manager Recovery' service page \u2014 supporting illustration in 'My Approach' section"
+}

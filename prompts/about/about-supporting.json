@@ -1,0 +1,14 @@
+{
+  "id": "about-supporting",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "about-supporting.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": { "width": 400, "height": 300, "scalable": true },
+  "prompt": "Small abstract corner motif, thin geometric line pattern in navy and steel blue with a subtle teal accent, suitable for breaking up long-form text without a literal illustration of a person or scene.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "About page, optional visual break in long-form narrative"
+}

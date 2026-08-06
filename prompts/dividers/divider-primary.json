@@ -1,0 +1,14 @@
+{
+  "id": "divider-primary",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "divider-primary.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/dividers/",
+  "dimensions": { "width": 1600, "height": 120, "scalable": true },
+  "prompt": "Extremely minimal horizontal line-art motif, a single thin wave or geometric line pattern spanning full width, navy on light background, subtle and unobtrusive, vector style, no other elements.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "Reusable section divider, Home and long-form pages"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "og-base-template",
+  "type": "og-template",
+  "layered": false,
+  "outputFilename": "og-base-template.jpg",
+  "outputFormat": "jpg",
+  "destination": "assets/generated/og/_base/",
+  "dimensions": { "width": 1200, "height": 630, "scalable": false },
+  "prompt": "Template background: deep navy base with a subtle abstract geometric line pattern in steel blue confined to the lower-right corner at low opacity, large clear negative space in the upper-left two-thirds reserved for overlaid title text, small clear area bottom-right reserved for a monogram mark, premium editorial style.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "Base background for every per-page OG image. Generated once. Per-page title text is composited on top deterministically by scripts/generate-og-images.js using data/pages.json — never baked into the AI-generated artwork itself, so text stays pixel-accurate."
+}

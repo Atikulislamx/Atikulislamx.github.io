@@ -1,0 +1,15 @@
+{
+  "id": "empty-blog",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "empty-blog.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/empty-states/",
+  "dimensions": { "width": 300, "height": 300, "scalable": true },
+  "prompt": "Simple, friendly abstract line illustration suggesting written content/articles — an abstract open-page or pen-line motif, navy and steel-blue line art with a small teal accent, warm but restrained, no cartoon characters.",
+  "decorative": false,
+  "deferred": true,
+  "deferredReason": "Generated only when the Blog section is activated per the Master Blueprint's phased rollout.",
+  "altText": "Illustration indicating no blog posts are available yet",
+  "usage": "Blog hub, pre-launch/empty state"
+}

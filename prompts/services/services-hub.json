@@ -1,0 +1,14 @@
+{
+  "id": "services-hub",
+  "type": "illustration",
+  "layered": true,
+  "outputFilename": "services-hub.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": { "width": 600, "height": 400, "scalable": true },
+  "prompt": "Minimal abstract network of connected nodes and thin lines forming a subtle geometric pattern, navy and steel blue palette with one teal accent node, clean vector line-art, plenty of white/light background space, premium and understated, no glow effects, no neon, no photorealism.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "Services hub page illustration"
+}

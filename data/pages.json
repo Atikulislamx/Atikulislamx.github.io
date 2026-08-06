@@ -1,0 +1,22 @@
+[
+  { "slug": "home", "title": "Atikul Islam Rabbi — Founder & CEO of Cyber Infinity", "type": "core" },
+  { "slug": "about", "title": "About Atikul Islam Rabbi", "type": "core" },
+  { "slug": "services", "title": "Services — Social Media Security & Recovery", "type": "hub" },
+  { "slug": "service-facebook-page-recovery", "title": "Facebook Page Recovery", "type": "service" },
+  { "slug": "service-facebook-account-recovery", "title": "Facebook Account Recovery", "type": "service" },
+  { "slug": "service-instagram-account-recovery", "title": "Instagram Account Recovery", "type": "service" },
+  { "slug": "service-meta-business-manager-recovery", "title": "Meta Business Manager Recovery", "type": "service" },
+  { "slug": "service-business-verification-guidance", "title": "Business Verification Guidance", "type": "service" },
+  { "slug": "service-admin-dispute-resolution", "title": "Admin Dispute Resolution", "type": "service" },
+  { "slug": "service-security-consultation", "title": "Security Consultation", "type": "service" },
+  { "slug": "service-social-media-security-audit", "title": "Social Media Security Audit", "type": "service" },
+  { "slug": "case-studies", "title": "Case Studies", "type": "hub" },
+  { "slug": "case-study-zero-idea", "title": "Zero Idea: Facebook Page Recovery", "type": "case-study" },
+  { "slug": "case-study-dinajpur-image", "title": "Dinajpur Image: Case Study", "type": "case-study" },
+  { "slug": "case-study-santali-ari-chari", "title": "Santali Ari-Chari: Case Study", "type": "case-study" },
+  { "slug": "case-study-business-manager-verification-uae", "title": "Business Manager Verification: UAE Case Study", "type": "case-study" },
+  { "slug": "case-study-delicious-food-by-arpa", "title": "Delicious Food by Arpa: Case Study", "type": "case-study" },
+  { "slug": "portfolio", "title": "Portfolio — Technical Work", "type": "core" },
+  { "slug": "faq", "title": "Frequently Asked Questions", "type": "core" },
+  { "slug": "contact", "title": "Contact Atikul Islam Rabbi", "type": "core" }
+]

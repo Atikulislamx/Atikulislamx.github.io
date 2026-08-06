@@ -1,0 +1,15 @@
+{
+  "id": "media-recognition",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "media-recognition.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": { "width": 400, "height": 300, "scalable": true },
+  "prompt": "Minimal abstract radiating-lines or spotlight motif evoking recognition/press rather than security, navy and steel blue with a subtle teal accent, still minimal and understated.",
+  "decorative": true,
+  "deferred": true,
+  "deferredReason": "Generated only when the Media & Recognition page is activated.",
+  "altText": "",
+  "usage": "Media & Recognition page supporting graphic"
+}

@@ -1,0 +1,5 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <g id="layer-bg"><circle cx="129.4" cy="208.9" r="99.9" fill="none" stroke="#0F2A4A" stroke-width="1.5" opacity="0.5"/></g>
+  <g id="layer-mid"><circle cx="450.5" cy="256.0" r="75.3" fill="none" stroke="#1B4965" stroke-width="1.5" opacity="0.6"/><line x1="129.4" y1="208.9" x2="450.5" y2="256.0" stroke="#1B4965" stroke-width="1" opacity="0.4"/></g>
+  <g id="layer-accent"><circle cx="450.5" cy="256.0" r="4" fill="#2EC4B6"/><circle cx="129.4" cy="208.9" r="3" fill="#2EC4B6" opacity="0.7"/></g>
+</svg>

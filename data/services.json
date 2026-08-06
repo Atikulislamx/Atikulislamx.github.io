@@ -1,0 +1,92 @@
+{
+  "services": [
+    {
+      "slug": "facebook-page-recovery",
+      "title": "Facebook Page Recovery",
+      "category": "Recovery",
+      "summary": "Recovering ownership and administrator access to Facebook Pages that have been compromised, hijacked, or lost.",
+      "problem": "Facebook Pages are frequently targeted for takeover, leaving the legitimate administrator locked out — sometimes for extended periods — while the page's content, audience, and reputation remain at risk.",
+      "approach": "I investigate the nature of the compromise, work through Meta's review and verification processes, and focus on restoring legitimate administrator access and securing the page once control is regained.",
+      "expectedOutcomes": "Every case is different, and recovery depends on the nature of the issue, platform policies, and available evidence. I do not guarantee recovery, but I bring a structured, evidence-based approach to every case.",
+      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "relatedCaseStudySlug": "zero-idea-facebook-page-recovery"
+    },
+    {
+      "slug": "facebook-account-recovery",
+      "title": "Facebook Account Recovery",
+      "category": "Recovery",
+      "summary": "Recovering compromised or inaccessible personal Facebook accounts.",
+      "problem": "A hacked or disabled personal Facebook account can cut off access to years of connections, business communication, and linked assets like Pages and ad accounts.",
+      "approach": "I assess how the account was compromised, guide the ownership-verification process, and work to restore legitimate access while closing the security gap that allowed the compromise.",
+      "expectedOutcomes": "Recovery outcomes vary by case. I do not guarantee recovery, but I apply the same structured process to every account I work on.",
+      "relatedFaqIds": ["guarantee-recovery", "recovery-time"],
+      "relatedCaseStudySlug": null
+    },
+    {
+      "slug": "instagram-account-recovery",
+      "title": "Instagram Account Recovery",
+      "category": "Recovery",
+      "summary": "Recovering compromised or inaccessible Instagram accounts.",
+      "problem": "Instagram account takeovers can lock out creators and businesses from their audience, content history, and any linked Meta Business assets.",
+      "approach": "I investigate the compromise, guide the account-ownership verification process with Meta, and work toward restoring legitimate access.",
+      "expectedOutcomes": "Every case is evaluated individually, and I do not guarantee recovery — but I apply a consistent, evidence-based process to each one.",
+      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "relatedCaseStudySlug": null
+    },
+    {
+      "slug": "meta-business-manager-recovery",
+      "title": "Meta Business Manager Recovery",
+      "category": "Recovery",
+      "summary": "Recovering hacked or restricted Meta Business Managers, including their linked Pages, ad accounts, and assets.",
+      "problem": "A compromised or restricted Business Manager can affect every asset connected to it at once — Pages, ad accounts, and team access — making this one of the more complex recovery scenarios.",
+      "approach": "I investigate the scope of the compromise or restriction, work through Meta's Business Manager review and verification processes, and focus on restoring legitimate administrator control across all affected assets.",
+      "expectedOutcomes": "Outcomes depend on the specifics of each Business Manager and the nature of the issue. I do not guarantee recovery, but I bring direct experience recovering hacked and restricted Business Managers to every engagement.",
+      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "relatedCaseStudySlug": "delicious-food-by-arpa"
+    },
+    {
+      "slug": "business-verification-guidance",
+      "title": "Business Verification Guidance",
+      "category": "Verification & Disputes",
+      "summary": "Guiding businesses through Meta Business Manager verification, including resolving restrictions that block the process.",
+      "problem": "Meta's business verification process can be blocked by prior restrictions, unclear requirements, or incomplete documentation, leaving legitimate businesses unable to verify.",
+      "approach": "I review the current state of the Business Manager, resolve any restrictions standing in the way, and guide the business through preparing for and completing Meta's verification process.",
+      "expectedOutcomes": "Verification outcomes depend on Meta's own review. I do not guarantee approval, but I focus on ensuring the Business Manager is correctly prepared before submission.",
+      "relatedFaqIds": ["guarantee-recovery", "information-required"],
+      "relatedCaseStudySlug": "delicious-food-by-arpa"
+    },
+    {
+      "slug": "admin-dispute-resolution",
+      "title": "Admin Dispute Resolution",
+      "category": "Verification & Disputes",
+      "summary": "Resolving disputes over Page or Business Manager administrator access and asset ownership.",
+      "problem": "Disputes over who legitimately administers a Page or Business Manager can leave assets frozen or contested, especially after a change in team, a former employee's continued access, or a takeover attempt.",
+      "approach": "I review the ownership and administrative history of the asset, help establish legitimate ownership through Meta's dispute and verification channels, and work toward a resolution that restores proper control.",
+      "expectedOutcomes": "Every dispute is evaluated on its own facts. I do not guarantee a specific outcome, but I approach each case with careful documentation and a clear process.",
+      "relatedFaqIds": ["guarantee-recovery", "information-required"],
+      "relatedCaseStudySlug": null
+    },
+    {
+      "slug": "security-consultation",
+      "title": "Security Consultation",
+      "category": "Security",
+      "summary": "Advising businesses and creators on strengthening the security of their social media accounts and Business Manager setup.",
+      "problem": "Many account compromises are preventable — weak admin structures, missing two-factor authentication, and unclear asset ownership all increase risk.",
+      "approach": "I review the current security posture of your accounts and Business Manager, identify the specific gaps most likely to lead to compromise, and recommend practical steps to close them.",
+      "expectedOutcomes": "Consultation strengthens your security posture going forward; it does not retroactively address an active compromise, which falls under the relevant recovery service instead.",
+      "relatedFaqIds": ["international-clients"],
+      "relatedCaseStudySlug": null
+    },
+    {
+      "slug": "social-media-security-audit",
+      "title": "Social Media Security Audit",
+      "category": "Security",
+      "summary": "A structured review of your social media and Business Manager accounts to identify security risks before they become incidents.",
+      "problem": "Businesses often don't have visibility into who has access to their Pages, ad accounts, and Business Manager, or which settings leave them exposed.",
+      "approach": "I audit administrator access, asset ownership, and account-level security settings across your Facebook, Instagram, and Business Manager presence, and provide a clear summary of findings and recommendations.",
+      "expectedOutcomes": "An audit identifies risk areas and recommended fixes; it is a preventative service, distinct from active account recovery.",
+      "relatedFaqIds": ["international-clients"],
+      "relatedCaseStudySlug": null
+    }
+  ]
+}

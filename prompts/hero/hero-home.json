@@ -1,0 +1,14 @@
+{
+  "id": "hero-home",
+  "type": "illustration",
+  "layered": true,
+  "outputFilename": "hero-home.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/hero/",
+  "dimensions": { "width": 1920, "height": 1080, "scalable": true },
+  "prompt": "Abstract minimal geometric illustration, thin overlapping line curves and soft gradient shapes suggesting security and connectivity, deep navy and steel blue tones with a single subtle cyan-teal accent line, generous negative space, premium consultancy aesthetic, vector line-art style, no text, no literal icons (no locks/shields/people).",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "Home page hero background, full-bleed behind hero text"
+}

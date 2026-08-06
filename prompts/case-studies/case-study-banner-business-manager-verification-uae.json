@@ -1,0 +1,18 @@
+{
+  "id": "case-study-banner-business-manager-verification-uae",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "case-study-banner-business-manager-verification-uae.jpg",
+  "outputFormat": "jpg",
+  "destination": "assets/generated/banners/",
+  "dimensions": {
+    "width": 1600,
+    "height": 600,
+    "scalable": false
+  },
+  "prompt": "Abstract geometric banner illustration, soft overlapping navy and steel-blue gradient shapes with a single teal accent detail, wide 16:6 aspect composition, premium and editorial, no literal imagery of people, screens, or logos, ample space reserved on one side for a title overlay. Industry-agnostic and generic \u2014 must not reference or imply any specific real client, brand, or logo.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "Abstract banner artwork for the Business Manager Verification (UAE, anonymized) case study",
+  "usage": "Banner for 'Business Manager Verification (UAE, anonymized)'"
+}

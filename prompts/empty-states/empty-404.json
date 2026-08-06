@@ -1,0 +1,14 @@
+{
+  "id": "empty-404",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "empty-404.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/empty-states/",
+  "dimensions": { "width": 300, "height": 300, "scalable": true },
+  "prompt": "Simple, friendly abstract line illustration suggesting a page that cannot be found — a subtle abstract signpost or path-fork motif, navy and steel-blue line art with a small teal accent, warm but restrained, no cartoon characters, no literal '404' numeral (real text renders as HTML, not baked into the image).",
+  "decorative": false,
+  "deferred": false,
+  "altText": "Illustration indicating the requested page could not be found",
+  "usage": "404 page"
+}

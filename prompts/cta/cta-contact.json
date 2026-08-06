@@ -1,0 +1,14 @@
+{
+  "id": "cta-contact",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "cta-contact.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/cta/",
+  "dimensions": { "width": 400, "height": 400, "scalable": true },
+  "prompt": "Single minimal abstract geometric shape, overlapping thin-line circles or arcs, deep navy and one teal accent line, small and understated, vector, designed to sit beside a call-to-action text block without competing for attention.",
+  "decorative": true,
+  "deferred": false,
+  "altText": "",
+  "usage": "Final Contact CTA band, reused site-wide"
+}

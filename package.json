@@ -1,0 +1,20 @@
+{
+  "name": "atikulislamrabbi-portfolio-asset-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build-time visual asset generation pipeline for the Atikul Islam Rabbi portfolio site. Not shipped to the browser — vanilla HTML/CSS/JS remains the runtime stack per the project's Development & Design System rules.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "generate:assets": "node scripts/build-assets.js",
+    "generate:assets:force": "node scripts/build-assets.js --force",
+    "generate:favicon": "node scripts/generate-favicon.js",
+    "generate:og": "node scripts/generate-og-images.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "svgo": "^3.3.0",
+    "dotenv": "^16.4.0"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "caseStudies": [
+    {
+      "slug": "zero-idea-facebook-page-recovery",
+      "title": "Zero Idea: Facebook Page Recovery",
+      "clientIndustry": "Science & Educational Content Creation",
+      "platform": "Facebook",
+      "location": null,
+      "anonymized": false,
+      "background": "\"Zero Idea\" is a Facebook page with over 400,000 followers built around science and educational content.",
+      "challenge": "The page was hacked by an attacker based in Vietnam. The legitimate administrator lost access for approximately two months.",
+      "investigation": "I investigated how the compromise occurred and confirmed the legitimate administrator's ownership of the page.",
+      "solution": "I worked through the recovery process to restore administrator access, recover ownership, and secure the page against further compromise.",
+      "outcome": "The page was successfully recovered and administrator control was restored.",
+      "keyTakeaways": "Extended lockouts (in this case, around two months) are recoverable with a structured, patient approach — even against a determined attacker.",
+      "publicReference": "The page owner publicly shared a video acknowledging the successful recovery."
+    },
+    {
+      "slug": "dinajpur-image",
+      "title": "Dinajpur Image: Case Study",
+      "clientIndustry": "History & Cultural Content",
+      "platform": null,
+      "location": null,
+      "anonymized": false,
+      "background": "Dinajpur Image is a page focused on history and cultural content.",
+      "challenge": "The page was disabled after false trademark and copyright reports. The reporting party allegedly demanded money in connection with the reports.",
+      "investigation": "I reviewed the ownership and legitimacy of the page in preparation for the verification and dispute process.",
+      "solution": "I completed ownership verification, worked through Meta's review process, and assisted with the copyright dispute.",
+      "outcome": "The page was successfully restored.",
+      "keyTakeaways": "False copyright and trademark reports are a real and recoverable threat — ownership verification and Meta's dispute process are the correct path forward.",
+      "publicReference": null
+    },
+    {
+      "slug": "santali-ari-chari",
+      "title": "Santali Ari-Chari: Case Study",
+      "clientIndustry": "Santali Language & Culture",
+      "platform": null,
+      "location": null,
+      "anonymized": false,
+      "background": "Santali Ari-Chari is a page dedicated to Santali language and culture.",
+      "challenge": "The page was compromised after being hacked.",
+      "investigation": "I assessed the compromise and the administrator's legitimate ownership of the page.",
+      "solution": "I completed account recovery and administrative restoration, then applied security improvements to reduce the risk of repeat compromise.",
+      "outcome": "The page was successfully recovered, restoring the community's online presence.",
+      "keyTakeaways": "Recovering a compromised community page is about more than restoring access — securing it afterward is what protects the community it serves.",
+      "publicReference": null
+    },
+    {
+      "slug": "business-manager-verification-uae",
+      "title": "Business Manager Verification: UAE Case Study",
+      "clientIndustry": "AI Growth & Digital Marketing",
+      "platform": "Meta Business Manager",
+      "location": "Dubai, UAE",
+      "anonymized": true,
+      "anonymizationNote": "This case is presented without the client's name pending explicit approval, per the confidentiality decision recorded in the project's Master Blueprint.",
+      "background": "An AI growth and digital marketing business based in Dubai, UAE, engaged this service for Business Manager support.",
+      "challenge": "The client experienced multiple Business Manager restrictions and verification issues.",
+      "investigation": "I reviewed the restriction history and current state of the Business Manager to determine the path to verification.",
+      "solution": "I resolved the Business Manager restrictions and prepared the Business Manager for Meta's verification process.",
+      "outcome": "The Business Manager was successfully verified.",
+      "keyTakeaways": "Verification is often blocked by unresolved restrictions rather than the verification process itself — resolving those first is usually the key step.",
+      "publicReference": null
+    },
+    {
+      "slug": "delicious-food-by-arpa",
+      "title": "Delicious Food by Arpa: Case Study",
+      "clientIndustry": "Food & Cake Business",
+      "platform": null,
+      "location": "Bangladesh",
+      "anonymized": false,
+      "background": "Delicious Food by Arpa is a food and cake business based in Bangladesh.",
+      "challenge": "The business faced fake copyright claims, a restricted advertising account, and Business Manager verification issues, all at once.",
+      "investigation": "I reviewed each issue individually — the copyright claims, the ad account restriction, and the verification blockers — to determine the correct resolution path for each.",
+      "solution": "I removed the false copyright issues, resolved the advertising restrictions, completed Business Manager verification, and assisted with Facebook Page verification.",
+      "outcome": "All requested objectives were successfully completed.",
+      "keyTakeaways": "Multiple, compounding platform issues can often be resolved together as part of one structured engagement rather than requiring separate efforts.",
+      "publicReference": null
+    }
+  ]
+}

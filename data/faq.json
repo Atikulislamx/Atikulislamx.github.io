@@ -1,0 +1,28 @@
+{
+  "faqs": [
+    {
+      "id": "guarantee-recovery",
+      "category": "General",
+      "question": "Do you guarantee account recovery?",
+      "answer": "No. Recovery depends on the nature of the issue, platform policies, available evidence, and many other factors. Every case is evaluated individually."
+    },
+    {
+      "id": "recovery-time",
+      "category": "Recovery Process",
+      "question": "How long does recovery take?",
+      "answer": "Recovery time depends entirely on the complexity of the issue. Some cases can be resolved quickly, while others may require additional investigation or platform review."
+    },
+    {
+      "id": "information-required",
+      "category": "Recovery Process",
+      "question": "What information do you require?",
+      "answer": "The required information depends on the specific issue. Only information necessary for diagnosis and recovery will be requested."
+    },
+    {
+      "id": "international-clients",
+      "category": "Working With Me",
+      "question": "Do you work with international clients?",
+      "answer": "Yes. Remote services are available for clients worldwide."
+    }
+  ]
+}

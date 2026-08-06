@@ -1,0 +1,189 @@
+/* ==========================================================================
+   components.css — Buttons, Cards, Forms, Badges, Tags, Alerts, Accordion
+   ========================================================================== */
+
+/* ---- Buttons (Design-System-v1.md §10) --------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 44px;
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: var(--text-body-md);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding-inline: var(--space-4); font-size: var(--text-body-sm); }
+.btn--lg { height: 52px; padding-inline: var(--space-6); font-size: var(--text-body-lg); }
+
+.btn--primary { background: var(--color-primary); color: var(--color-text-inverse); }
+.btn--primary:hover { background: var(--color-secondary); }
+
+.btn--secondary { background: transparent; color: var(--color-primary); border: 1.5px solid var(--color-primary); }
+.btn--secondary:hover { background: var(--color-primary); color: var(--color-text-inverse); }
+
+.btn--ghost { background: transparent; color: var(--color-primary); }
+.btn--ghost:hover { background: var(--color-border); }
+
+.btn--accent { background: var(--color-accent); color: var(--color-primary); }
+.btn--accent:hover { background: #26b0a3; }
+
+/* ---- Cards (Design-System-v1.md §13) ------------------------------------ */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+a.card, .card--interactive {
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+a.card:hover, .card--interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card__icon { width: 40px; height: 40px; color: var(--color-accent-text); margin-bottom: var(--space-4); }
+.card__title { font-size: var(--text-heading-sm); margin-bottom: var(--space-2); }
+.card__desc { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: var(--color-accent-text);
+}
+
+.card--stat { text-align: center; }
+.card--stat .stat__number { font-family: var(--font-mono); font-size: var(--text-heading-lg); color: var(--color-primary); display: block; }
+.card--stat .stat__label { font-size: var(--text-body-sm); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+/* ---- Badges & Tags (Design-System-v1.md §14–15) -------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(46,196,182,0.1);
+  color: var(--color-accent-text);
+}
+.badge--muted { background: var(--color-border); color: var(--color-text-muted); }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-body-sm);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+/* ---- Alerts (Design-System-v1.md §16) ------------------------------------ */
+.alert {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border-left: 3px solid;
+  font-size: var(--text-body-sm);
+}
+.alert--info { background: rgba(27,73,101,0.06); border-color: var(--color-info); }
+.alert--success { background: rgba(26,127,90,0.08); border-color: var(--color-success); }
+.alert--warning { background: rgba(183,121,31,0.08); border-color: var(--color-warning); }
+.alert--danger { background: rgba(180,35,24,0.08); border-color: var(--color-danger); }
+
+/* ---- Forms (Design-System-v1.md §11) -------------------------------------- */
+.form-field { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-5); }
+.form-field label { font-size: var(--text-body-sm); font-weight: 600; }
+.form-field .hint { font-size: var(--text-body-sm); color: var(--color-text-muted); }
+
+.form-input, .form-textarea {
+  height: 44px;
+  padding-inline: var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: var(--text-body-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.form-textarea { height: auto; min-height: 140px; padding-block: var(--space-3); resize: vertical; }
+.form-input:focus, .form-textarea:focus { border-color: var(--color-accent); box-shadow: var(--shadow-focus); outline: none; }
+
+.form-field.has-error .form-input,
+.form-field.has-error .form-textarea { border-color: var(--color-danger); }
+.form-error {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-body-sm);
+}
+.form-field.has-error .form-error { display: block; }
+
+/* Honeypot: hidden from sighted users AND kept out of the tab order,
+   without display:none (some assistive tech still announces those
+   inconsistently — this uses an off-screen technique instead). */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---- Accordion (native <details>, Design-System-v1.md §19) --------------- */
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+.accordion-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary .chevron { transition: transform var(--transition-base); flex-shrink: 0; }
+.accordion-item[open] summary .chevron { transform: rotate(180deg); }
+.accordion-item__content { padding-bottom: var(--space-4); color: var(--color-text-muted); }
+
+/* ---- Pagination (Design-System-v1.md §21, reserved for future Blog) ------ */
+.pagination { display: flex; gap: var(--space-2); align-items: center; }
+.pagination a, .pagination span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 36px; height: 36px; border-radius: var(--radius-md);
+  font-size: var(--text-body-sm);
+}
+.pagination [aria-current="page"] { background: var(--color-primary); color: var(--color-text-inverse); }
+
+/* ---- CTA band -------------------------------------------------------------- */
+.cta-band {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .cta-band { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.cta-band h2 { color: var(--color-text-inverse); }

@@ -1,0 +1,15 @@
+{
+  "id": "testimonials-intro",
+  "type": "illustration",
+  "layered": false,
+  "outputFilename": "testimonials-intro.svg",
+  "outputFormat": "svg",
+  "destination": "assets/generated/illustrations/",
+  "dimensions": { "width": 300, "height": 300, "scalable": true },
+  "prompt": "Minimal abstract quotation-mark-adjacent line motif, not a literal quote-mark icon, navy line art, small and understated.",
+  "decorative": true,
+  "deferred": true,
+  "deferredReason": "Generated only when the Testimonials section is activated.",
+  "altText": "",
+  "usage": "Testimonials section intro graphic"
+}
