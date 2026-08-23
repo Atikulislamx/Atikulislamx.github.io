@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Replace https://atikulislamx.github.io throughout with the real
+  Replace https://atikulislam.me throughout with the real
   domain once purchased (Master-Blueprint-Final.md §Part 8). All URLs below
   match the approved sitemap (Master-Blueprint-Final.md Part 3.1) exactly.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://atikulislamx.github.io/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://atikulislamx.github.io/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/facebook-page-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/facebook-account-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/instagram-account-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/meta-business-manager-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/business-verification-guidance/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/admin-dispute-resolution/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/security-consultation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/services/social-media-security-audit/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/zero-idea-facebook-page-recovery/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/dinajpur-image/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/santali-ari-chari/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/business-manager-verification-uae/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/case-studies/delicious-food-by-arpa/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/portfolio/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://atikulislamx.github.io/faq/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://atikulislamx.github.io/contact/</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://atikulislam.me/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://atikulislam.me/services/facebook-page-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/facebook-account-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/instagram-account-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/meta-business-manager-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/business-verification-guidance/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/admin-dispute-resolution/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/security-consultation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/services/social-media-security-audit/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/zero-idea-facebook-page-recovery/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/dinajpur-image/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/santali-ari-chari/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/business-manager-verification-uae/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/case-studies/delicious-food-by-arpa/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/portfolio/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://atikulislam.me/faq/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atikulislam.me/contact/</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>
