@@ -1,15 +1,22 @@
 {
-  "name": "Atikul Islam Rabbi — Cyber Infinity",
+  "name": "Atikul Islam Rabbi",
   "short_name": "A. I. Rabbi",
-  "description": "Founder & CEO of Cyber Infinity | Social Media Security & Recovery Specialist",
+  "description": "Social media security and recovery specialist.",
   "start_url": "/",
   "scope": "/",
-  "display": "browser",
+  "display": "standalone",
   "background_color": "#F8FAFC",
   "theme_color": "#0F2A4A",
   "icons": [
-    { "src": "/assets/generated/favicon/favicon-16.png", "sizes": "16x16", "type": "image/png" },
-    { "src": "/assets/generated/favicon/favicon-32.png", "sizes": "32x32", "type": "image/png" },
-    { "src": "/assets/generated/favicon/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    {
+      "src": "/assets/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }

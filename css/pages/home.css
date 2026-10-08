@@ -1,49 +1,213 @@
 /* ==========================================================================
-   home.css — Home page hero + trust bar + featured case study
+   pages/home.css — Homepage: hero, trust band, expertise, proof, principles
+   Narrative order: Identity → Expertise → Services → Proof → Case studies →
+   Trust → CTA. Loaded only by index.html.
    ========================================================================== */
 
+/* ---- Hero ----------------------------------------------------------------- */
 .hero {
   position: relative;
-  padding-block: var(--space-9) var(--space-8);
   overflow: hidden;
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5.5rem) var(--section-pad);
+  background-image: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 72%);
 }
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.9;
+.hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
 }
-.hero__bg img { width: 100%; height: 100%; object-fit: cover; }
-
-.hero__content { max-width: 720px; }
-.hero__eyebrow {
-  display: inline-block;
-  margin-bottom: var(--space-4);
-  color: var(--color-accent-text);
+@media (min-width: 1024px) {
+  .hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--space-8); }
 }
-.hero__title { margin-bottom: var(--space-4); }
-.hero__subtitle { font-family: var(--font-body); font-size: var(--text-heading-sm); color: var(--color-text-muted); font-weight: 500; margin-bottom: var(--space-5); }
-.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
-
-.trust-bar {
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding-block: var(--space-6);
+.hero__title {
+  margin-top: var(--space-4);
+  font-size: var(--text-display-xl);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--color-primary);
+  max-width: 18ch;
 }
-.trust-bar__row {
+.hero__lead {
+  margin-top: var(--space-5);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 58ch;
+}
+.hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-6);
-  align-items: center;
-  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.hero__note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  max-width: 56ch;
+  margin-top: var(--space-5);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+.hero__note .icon { color: var(--color-accent-text); margin-top: 2px; }
+
+.hero__motif {
+  position: absolute;
+  right: -180px;
+  top: -40px;
+  width: min(640px, 92vw);
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 1023px) {
+  .hero__motif { right: -260px; top: auto; bottom: -120px; width: 520px; opacity: 0.55; }
 }
 
-.featured-case {
+/* Route card: a three-step path, shown beside the hero */
+.path-card {
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+.path-card__title {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.path { display: grid; }
+.path__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+.path__step:last-child { padding-bottom: 0; }
+.path__step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 44px;
+  bottom: 0;
+  width: 2px;
+  background-image: repeating-linear-gradient(to bottom, var(--color-accent) 0 6px, transparent 6px 10px);
+}
+.path__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+.path__title {
+  padding-top: 6px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.path__text {
+  margin-top: var(--space-1);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---- Trust band (directly under hero) ------------------------------------- */
+.trust-band {
+  background-color: var(--color-surface);
+  border-block: 1px solid var(--color-border);
+}
+
+/* ---- Expertise ------------------------------------------------------------- */
+.expertise-note {
+  margin-top: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 62ch;
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+.expertise-note .icon { color: var(--color-accent-text); margin-top: 2px; }
+
+/* Expertise cards: flat with a top rule, not boxed */
+.expertise-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-primary);
+}
+.expertise-item__text { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+
+/* ---- Proof: featured case ----------------------------------------------------- */
+.featured {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+@media (min-width: 1024px) {
+  .featured {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-7);
+  }
+}
+.featured__title { margin-top: var(--space-3); font-size: var(--text-heading-md); line-height: 1.2; }
+.featured__body > * + * { margin-top: var(--space-4); }
+.featured__aside {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+  padding: var(--space-5);
+  background-color: var(--color-surface-tint);
+  border-radius: var(--radius-lg);
+}
+
+/* ---- Principles (Trust) ---------------------------------------------------- */
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-primary);
+}
+.principle p { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+
+/* ---- About teaser ------------------------------------------------------------ */
+.about-teaser {
   display: grid;
   gap: var(--space-6);
   align-items: center;
 }
-@media (min-width: 1024px) {
-  .featured-case { grid-template-columns: 1fr 1fr; }
+@media (min-width: 768px) {
+  .about-teaser { grid-template-columns: minmax(180px, 240px) minmax(0, 1fr); gap: var(--space-8); }
 }
-.featured-case img { border-radius: var(--radius-lg); }
+.about-teaser__portrait { justify-self: center; width: 100%; max-width: 240px; }
+@media (min-width: 768px) {
+  .about-teaser__portrait { justify-self: start; }
+}
+.about-teaser__text > * + * { margin-top: var(--space-4); }
+
+/* Phones: the two hero actions read as one pair */
+@media (max-width: 639px) {
+  .hero__actions .btn { width: 100%; }
+}

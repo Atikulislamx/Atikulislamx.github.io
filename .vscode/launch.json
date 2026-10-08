@@ -9,7 +9,7 @@
             "type": "editor-browser",
             "request": "launch",
             "name": "Open index.html",
-            "url": "file:///d%3A/Downloads/atikulislamrabbi-site-FINAL%20%281%29/project/index.html"
+            "url": "http://localhost:8080/index.html"
         }
     ]
 }
