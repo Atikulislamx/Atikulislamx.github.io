@@ -51,7 +51,8 @@
   position: sticky;
   top: 0;
   z-index: var(--z-sticky-header);
-  background: var(--color-background);
+  background: rgba(245,246,242,0.97);
+  border-bottom: 1px solid var(--color-border);
   transition: box-shadow var(--transition-base);
 }
 .site-header.is-scrolled { box-shadow: var(--shadow-sm); }
@@ -98,8 +99,9 @@
 .submenu {
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 560px;
+  left: 50%;
+  transform: translateX(-44%);
+  width: min(680px, calc(100vw - 48px));
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -162,7 +164,7 @@
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.35fr .8fr 1.5fr .8fr; } }
 
 .footer-grid .footer-label {
   font-size: var(--text-label);
@@ -198,3 +200,30 @@
 .breadcrumbs a:hover { color: var(--color-accent-text); }
 .breadcrumbs [aria-current="page"] { color: var(--color-text-primary); }
 .breadcrumbs__sep { opacity: 0.5; }
+
+/* This is a group of ordinary links, not a WAI-ARIA application menu. */
+.has-submenu.is-dismissed .submenu { display: none; }
+.submenu a { border-radius: var(--radius-sm); }
+.submenu a:focus-visible { color: var(--color-primary); }
+.mobile-nav {
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform var(--transition-base), visibility 0s linear var(--transition-base);
+  padding: var(--space-5) max(var(--space-5), env(safe-area-inset-right)) calc(var(--space-5) + env(safe-area-inset-bottom));
+}
+.mobile-nav.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform var(--transition-base), visibility 0s;
+}
+.mobile-services__list { padding: var(--space-3) 0 var(--space-4) var(--space-4); display: grid; gap: 0; }
+.mobile-services__list a { display: block; padding: 10px 0; min-height: 44px; font-size: var(--text-body-sm); }
+.mobile-services summary { cursor: pointer; }
+.site-header__inner > a { min-width: 0; }
+.site-header__inner > a .text-label { overflow-wrap: normal; line-height: 1.25; }
+@media (max-width: 360px) { .site-header__inner > a .text-label { font-size: 0.75rem; } }
+@media (max-width: 1023px) { .site-header__inner { padding-block: var(--space-3); } }
+.breadcrumbs { flex-wrap: wrap; }
+.footer-grid a, .footer-bottom { overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .mobile-nav { transition: none; } }
+.footer-grid .footer-label { color: #94dbc9; opacity: 1; font-weight: 700; }

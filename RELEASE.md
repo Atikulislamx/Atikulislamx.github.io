@@ -1,3 +1,9 @@
+# Historical v1 release note (superseded)
+
+This file describes an earlier delivery and contains obsolete deployment claims about missing assets, placeholder domains, font files, and an image API. For the current site, see [`docs/site-audit-2026.md`](docs/site-audit-2026.md), [`docs/deployment-checklist.md`](docs/deployment-checklist.md) and [`README.md`](README.md). The text below is retained as a historical record, not deployment instructions.
+
+---
+
 # RELEASE.md
 ## Atikul Islam Rabbi — Personal Brand & Cyber Infinity Website
 ### v1.0 — Implementation Complete, Audited

@@ -12,7 +12,7 @@
       "investigation": "I investigated how the compromise occurred and confirmed the legitimate administrator's ownership of the page.",
       "solution": "I worked through the recovery process to restore administrator access, recover ownership, and secure the page against further compromise.",
       "outcome": "The page was successfully recovered and administrator control was restored.",
-      "keyTakeaways": "Extended lockouts (in this case, around two months) are recoverable with a structured, patient approach — even against a determined attacker.",
+      "keyTakeaways": "In this case, administrator access was restored after roughly two months of lockout through a structured, patient recovery process.",
       "publicReference": "The page owner publicly shared a video acknowledging the successful recovery."
     },
     {

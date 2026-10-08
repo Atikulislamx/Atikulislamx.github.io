@@ -7,11 +7,11 @@
 /* ---- Design Tokens -------------------------------------------------- */
 :root {
   /* Color */
-  --color-primary: #0F2A4A;
-  --color-secondary: #1B4965;
+  --color-primary: #102C44;
+  --color-secondary: #204C61;
   --color-accent: #2EC4B6;
-  --color-accent-text: #0E7C71;
-  --color-background: #F8FAFC;
+  --color-accent-text: #126F65;
+  --color-background: #F5F6F2;
   --color-surface: #FFFFFF;
   --color-text-primary: #101828;
   --color-text-muted: #475467;
@@ -20,17 +20,17 @@
   --color-warning: #B7791F;
   --color-danger: #B42318;
   --color-info: #1B4965;
-  --color-border: #E4E7EC;
+  --color-border: #DDE4E2;
   --color-border-strong: #D0D5DD;
 
   /* Typography */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, monospace;
 
-  --text-display-xl: 3.5rem;
-  --text-display-lg: 2.75rem;
-  --text-heading-lg: 2.25rem;
+  --text-display-xl: clamp(2.75rem, 5vw, 5rem);
+  --text-display-lg: clamp(2.3rem, 4vw, 3.75rem);
+  --text-heading-lg: clamp(1.85rem, 3vw, 2.75rem);
   --text-heading-md: 1.75rem;
   --text-heading-sm: 1.375rem;
   --text-body-lg: 1.125rem;
@@ -120,7 +120,7 @@ table { border-collapse: collapse; width: 100%; }
    of choosing the wrong semantic tag.
    ------------------------------------------------------------------------ */
 
-h1, h2, h3 { font-family: var(--font-display); color: var(--color-text-primary); line-height: 1.2; }
+h1, h2, h3 { overflow-wrap: anywhere; font-family: var(--font-display); color: var(--color-text-primary); line-height: 1.2; }
 h4, h5, h6 { font-family: var(--font-body); font-weight: 600; color: var(--color-text-primary); }
 
 h1 { font-size: var(--text-display-lg); font-weight: 600; line-height: 1.15; }
@@ -148,25 +148,7 @@ p + p { margin-top: var(--space-4); }
 .text-inverse { color: var(--color-text-inverse); }
 .text-accent { color: var(--color-accent-text); }
 
-/* ---- Fonts (self-hosted, per performance guidance in Design-System-v1.md §29) --
-   Font files are not included in this delivery (binary assets outside
-   generation scope) — swap these @font-face src paths for real .woff2 files
-   under assets/fonts/ before deployment, or use the Google Fonts <link>
-   fallback documented in index.html's <head>.
-   ------------------------------------------------------------------------ */
-@font-face {
-  font-family: 'Inter';
-  src: url('/assets/fonts/inter-variable.woff2') format('woff2');
-  font-weight: 400 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Fraunces';
-  src: url('/assets/fonts/fraunces-variable.woff2') format('woff2');
-  font-weight: 500 600;
-  font-display: swap;
-}
-
+/* System fonts and Georgia are intentional: no missing font downloads or layout swap. */
 /* ---- Accessibility utilities ------------------------------------------ */
 .visually-hidden {
   position: absolute;
@@ -194,24 +176,19 @@ p + p { margin-top: var(--space-4); }
 }
 
 :focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-accent-text);
+  outline-offset: 3px;
   box-shadow: var(--shadow-focus);
   border-radius: var(--radius-sm);
 }
 
-/* ---- Scroll reveal (Design-System-v1.md §23) --------------------------
-   Paired with js/main.js's IntersectionObserver. Reduced-motion users get
-   the .is-visible state applied immediately with no transition at all —
-   handled in JS, not just CSS, so there's no motion to opt out of. */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+/* Content is always visible, including with JavaScript disabled. */
+[data-reveal] { opacity: 1; transform: none; }
+
+/* Avoid forced horizontal scrolling on long addresses and names. */
+main, .site-footer { overflow-wrap: break-word; }
+@media (max-width: 479px) {
+  :root { --space-8: 48px; --space-9: 64px; }
 }
-[data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
-}
+
+[hidden] { display: none !important; }

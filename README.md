@@ -1,67 +1,20 @@
-# atikulislamx.github.io
+# Atikul Islam Rabbi — professional portfolio
 
-Personal portfolio and agency site for Atikul Islam Rabbi — Founder & CEO of Cyber Infinity. This repository contains the static site sources (HTML/CSS/JS) plus a small Node-based build-time asset pipeline for generating favicons and Open Graph images.
+Static personal authority site for **Atikul Islam Rabbi**, Social Media Security & Recovery Specialist and Founder & CEO of Cyber Infinity. Production domain: https://atikulislam.me/ (`CNAME`).
 
-Live site: https://atikulislam.me/ (CNAME present)
+## Site map and deployment
 
-## Features
-- Static, fast, and accessible HTML/CSS/vanilla JS (no framework runtime)
-- Build-time image generation & optimization (sharp, svgo)
-- Structured data (JSON-LD), Open Graph & Twitter Card metadata
-- Responsive design, accessible navigation, and small client-side interactions (mobile nav, scroll reveal)
-- Case studies, services, and contact pages for lead generation
+The committed `index.html`, `about/`, `services/` (eight detail pages), `case-studies/` (five detail pages), `portfolio/`, `faq/`, `contact/`, and `404.html` are directory-based routes. Shared CSS lives in `css/`, JavaScript in `js/`, source content in `data/`. `sitemap.xml`, `robots.txt`, and `site.webmanifest` are served directly. GitHub Pages needs **no Node install, framework, backend, or build step**; leave the custom domain and root-relative asset paths intact.
 
-## Quick start (local)
-Requirements: Node.js >= 18, npm
+To preview locally: `python3 -m http.server 8080 --bind 0.0.0.0`, then visit http://localhost:8080/. The contact form submits to Web3Forms through `js/modules/form.js`; its public access key is not a private API secret. Set form domain restrictions and notifications in Web3Forms, and use an email link as fallback if the service is down.
 
-1. Install dependencies
-   ```
-   npm ci
-   ```
+## Editing
 
-2. Generate build-time assets (favicons, OG images):
-   ```
-   npm run generate:assets
-   ```
-
-3. Serve the directory (any static server). Example:
-   ```
-   npx http-server -c-1 . -p 8080
-   ```
-
-Visit http://localhost:8080 to preview.
-
-## Scripts
-- `npm run generate:assets` — runs `scripts/build-assets.js` to generate images.
-- `npm run generate:assets:force` — force re-generate assets.
-- `npm run generate:favicon` — generate favicons.
-- `npm run generate:og` — generate Open Graph images.
-
-## Repo layout
-- `index.html`, `about/`, `case-studies/`, `services/` — static HTML pages
-- `css/` — stylesheets (base, layout, components)
-- `js/` — client JavaScript modules
-- `data/` — site data used by client scripts (e.g., `site.json`)
-- `scripts/` — Node scripts for build-time asset generation
-- `assets/` — generated images & favicons (output)
-
-## Deployment
-This project is designed for GitHub Pages:
-- Push to the default branch (main) — GitHub Pages will serve the site.
-- A `CNAME` file is included for the custom domain `atikulislam.me`.
-
-If you prefer to build assets on CI instead of committing generated files:
-- Add a GitHub Actions workflow that runs the generate script and commits the assets to the branch used for Pages, or deploy to a static hosting provider after generation.
-
-## Contributing
-- Open an issue for discussion before making major changes.
-- For minor fixes, fork and submit a pull request.
-- If you change code that affects `scripts/` or `package.json`, include a short note about the Node.js version and commands used to test.
-
-## License
-Add your preferred license here (e.g., MIT). If the repository contains business-sensitive content you don't want to license, keep the repository's default terms and document them here.
+- Keep service outcomes conditional on Meta's decisions and available evidence. Avoid claims that have not been substantiated.
+- The existing photograph is reused without identity modification. `data/site.json` can point to a genuine replacement image, but the HTML static fallback should also be updated.
+- Editorial images are already committed. `docs/asset-pipeline.md` explains the visual system and the optional reproducible artwork script. **Do not run the legacy AI asset pipeline with `--force` on production artwork.**
+- `docs/site-audit-2026.md` records the audit, fixes, limitations, and QA checklist.
 
 ## Contact
-- Email: help.atikulislam@gmail.com
-- WhatsApp: https://wa.me/8801300228105
-- GitHub: https://github.com/atikulislamx
+
+Email: help.atikulislam@gmail.com · WhatsApp: https://wa.me/8801300228105

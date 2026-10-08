@@ -1,126 +1,85 @@
-/**
- * js/modules/form.js
- * Contact form submission via Web3Forms (see docs/asset-pipeline.md's sibling
- * decision doc, Master-Blueprint-Final.md §Part 8 — Web3Forms confirmed).
- *
- * IMPORTANT: replace WEB3FORMS_ACCESS_KEY below with a real Web3Forms access
- * key before deployment (https://web3forms.com — free, no backend required).
- * This is a public, client-side key by design for this service; it is not a
- * secret and does not need to be hidden from the page source.
+/** Web3Forms client-side submission. The access key is a public form identifier,
+ * not a secret; configure domain restrictions and notifications in Web3Forms.
  */
-
 const WEB3FORMS_ACCESS_KEY = '437ef875-ee27-44e0-9884-22910c26316b';
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
-function setFieldError(field, message) {
+function setError(field, message) {
   const wrapper = field.closest('.form-field');
   if (!wrapper) return;
-  wrapper.classList.add('has-error');
-  const errorEl = wrapper.querySelector('.form-error');
-  if (errorEl) errorEl.textContent = message;
-  field.setAttribute('aria-invalid', 'true');
+  wrapper.classList.toggle('has-error', Boolean(message));
+  field.setAttribute('aria-invalid', message ? 'true' : 'false');
+  const error = wrapper.querySelector('.form-error');
+  if (error) error.textContent = message;
 }
-
-function clearFieldError(field) {
-  const wrapper = field.closest('.form-field');
-  if (!wrapper) return;
-  wrapper.classList.remove('has-error');
-  field.removeAttribute('aria-invalid');
+function errorFor(field) {
+  const value = field.value.trim();
+  if (field.required && !value) return 'This field is required.';
+  if (field.type === 'email' && value && !field.validity.valid) return 'Please enter a valid email address.';
+  return '';
 }
-
-function validateForm(form) {
-  let isValid = true;
-  const requiredFields = form.querySelectorAll('[required]');
-
-  requiredFields.forEach((field) => {
-    clearFieldError(field);
-    if (!field.value.trim()) {
-      setFieldError(field, 'This field is required.');
-      isValid = false;
-      return;
-    }
-    if (field.type === 'email') {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(field.value.trim())) {
-        setFieldError(field, 'Please enter a valid email address.');
-        isValid = false;
-      }
-    }
+function validate(form) {
+  let firstInvalid;
+  form.querySelectorAll('.form-input, .form-textarea').forEach(field => {
+    const error = errorFor(field);
+    setError(field, error);
+    if (error && !firstInvalid) firstInvalid = field;
   });
-
-  return isValid;
+  firstInvalid?.focus();
+  return !firstInvalid;
 }
-
-async function handleSubmit(event, form, statusRegion) {
-  event.preventDefault();
-
-  // Honeypot check — a filled hidden field means a bot, not a real visitor.
-  const honeypot = form.querySelector('input[name="botcheck"]');
-  if (honeypot && honeypot.value) {
-    return; // silently drop — no error shown, since this path is bot traffic
-  }
-
-  if (!validateForm(form)) {
-    statusRegion.textContent = 'Please fix the highlighted fields and try again.';
-    statusRegion.className = 'alert alert--danger';
-    form.querySelector('[aria-invalid="true"]')?.focus();
-    return;
-  }
-
-  const submitBtn = form.querySelector('[type="submit"]');
-  const originalLabel = submitBtn.textContent;
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-
-  try {
-    const formData = new FormData(form);
-    formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-
-    const response = await fetch(WEB3FORMS_ENDPOINT, {
-      method: 'POST',
-      body: formData,
-    });
-    const result = await response.json();
-
-    if (result.success) {
-      form.reset();
-      form.hidden = true;
-      statusRegion.textContent = "Thanks — your message has been sent. I'll get back to you as soon as I can.";
-      statusRegion.className = 'alert alert--success';
-      statusRegion.setAttribute('tabindex', '-1');
-      statusRegion.focus();
-    } else {
-      throw new Error(result.message || 'Submission failed.');
-    }
-  } catch (err) {
-    statusRegion.textContent =
-      "Something went wrong sending your message. Please try again, or email help.atikulislam@gmail.com directly.";
-    statusRegion.className = 'alert alert--danger';
-    statusRegion.setAttribute('tabindex', '-1');
-    statusRegion.focus();
-    console.error('[contact-form]', err);
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalLabel;
-  }
+function status(region, message, kind) {
+  region.textContent = message;
+  region.className = `alert alert--${kind}`;
+  region.hidden = false;
+  region.focus();
 }
-
 function initContactForm() {
   const form = document.querySelector('[data-contact-form]');
-  if (!form) return;
-  const statusRegion = document.querySelector('[data-form-status]');
-
-  form.addEventListener('submit', (e) => handleSubmit(e, form, statusRegion));
-
-  form.querySelectorAll('.form-input, .form-textarea').forEach((field) => {
-    field.addEventListener('blur', () => {
-      if (field.hasAttribute('required') && !field.value.trim()) {
-        setFieldError(field, 'This field is required.');
-      } else {
-        clearFieldError(field);
-      }
+  const region = document.querySelector('[data-form-status]');
+  if (!form || !region) return;
+  const button = form.querySelector('[type="submit"]');
+  if (!button) return;
+  form.querySelectorAll('.form-input, .form-textarea').forEach(field => {
+    field.addEventListener('blur', () => setError(field, errorFor(field)));
+    field.addEventListener('input', () => {
+      if (field.getAttribute('aria-invalid') === 'true') setError(field, errorFor(field));
     });
   });
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (button.disabled) return;
+    region.hidden = true;
+    if (!validate(form)) {
+      // Move focus to the first field; the inline message gives the specific reason.
+      region.textContent = 'Please correct the highlighted fields before sending.';
+      return;
+    }
+    if (form.elements.botcheck?.checked) {
+      status(region, 'Thanks for your message.', 'success');
+      return;
+    }
+    const label = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    form.setAttribute('aria-busy', 'true');
+    try {
+      const payload = new FormData(form);
+      payload.append('access_key', WEB3FORMS_ACCESS_KEY);
+      const response = await fetch(WEB3FORMS_ENDPOINT, { method: 'POST', body: payload });
+      if (!response.ok) throw new Error('Submission service unavailable');
+      const result = await response.json();
+      if (!result.success) throw new Error('Submission rejected');
+      form.reset();
+      form.hidden = true;
+      status(region, "Thanks — your message has been sent. I'll get back to you as soon as I can.", 'success');
+    } catch (_) {
+      status(region, 'Your message could not be sent. Please try again, or email help.atikulislam@gmail.com directly.', 'danger');
+    } finally {
+      button.disabled = false;
+      button.textContent = label;
+      form.removeAttribute('aria-busy');
+    }
+  });
 }
-
-document.addEventListener('DOMContentLoaded', initContactForm);
+initContactForm();

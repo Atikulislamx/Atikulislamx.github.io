@@ -1,3 +1,9 @@
+# Archived prompt specifications
+
+These JSON specs document the legacy optional image generator. Current deployed artwork is deterministic and documented in [`docs/asset-pipeline.md`](../docs/asset-pipeline.md). Re-running the old generator with `--force` will overwrite the current visual system.
+
+---
+
 # /prompts
 
 Every decorative/illustrative asset on the site is defined here as a JSON spec, organized by asset type. `scripts/build-assets.js` reads every non-deferred spec in this tree, generates the asset, and writes an optimized production file into `/assets/generated/`.

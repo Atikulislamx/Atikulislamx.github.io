@@ -1,93 +1,83 @@
-/**
- * js/main.js
- * Site-wide behavior: sticky header shadow, mobile nav toggle, scroll-reveal.
- * No framework, no build step — plain ES modules loaded via <script type="module">.
- */
-
+/** Shared progressive enhancements; static links and content remain usable without JS. */
 function initHeaderScrollState() {
   const header = document.querySelector('.site-header');
   if (!header) return;
-  const onScroll = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 8);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  const update = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
 }
 
 function initMobileNav() {
   const toggle = document.querySelector('[data-nav-toggle]');
   const panel = document.querySelector('[data-mobile-nav]');
-  const closeBtn = document.querySelector('[data-nav-close]');
   if (!toggle || !panel) return;
+  panel.inert = true;
+  const closeButton = panel.querySelector('[data-nav-close]');
+  const header = document.querySelector('.site-header');
+  let previousOverflow = '';
+  let previousFocus = null;
+  const isOpen = () => panel.classList.contains('is-open');
 
-  const open = () => {
+  function close(restoreFocus = true) {
+    if (!isOpen()) return;
+    panel.classList.remove('is-open');
+    panel.inert = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = previousOverflow;
+    if (header) header.inert = false;
+    if (restoreFocus) (previousFocus?.isConnected && previousFocus !== document.body ? previousFocus : toggle).focus();
+  }
+  function open() {
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    panel.inert = false;
     panel.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
-    panel.querySelector('a, button')?.focus();
+    toggle.setAttribute('aria-label', 'Close menu');
     document.body.style.overflow = 'hidden';
-  };
-  const close = () => {
-    panel.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.focus();
-    document.body.style.overflow = '';
-  };
-
-  toggle.addEventListener('click', () => {
-    const isOpen = panel.classList.contains('is-open');
-    isOpen ? close() : open();
-  });
-  closeBtn?.addEventListener('click', close);
-
-  panel.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
-  });
-
-  // Close the panel when a nav link inside it is activated
-  panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
-}
-
-function initScrollReveal() {
-  const targets = document.querySelectorAll('[data-reveal]');
-  if (!targets.length) return;
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
-    targets.forEach((el) => el.classList.add('is-visible'));
-    return;
+    if (header) header.inert = true;
+    (closeButton || panel.querySelector('a, summary'))?.focus();
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  targets.forEach((el) => observer.observe(el));
+  toggle.addEventListener('click', () => isOpen() ? close() : open());
+  closeButton?.addEventListener('click', () => close());
+  panel.addEventListener('click', event => {
+    if (event.target.closest('a')) close(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (!isOpen()) return;
+    if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+    if (event.key !== 'Tab') return;
+    const focusable = [...panel.querySelectorAll('a, button, summary')]
+      .filter(el => el.getClientRects().length && !el.closest('details:not([open])'));
+    if (!focusable.length) return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  // Breakpoint changes should never leave a hidden overlay or locked document.
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  desktop.addEventListener('change', event => { if (event.matches) close(false); });
 }
 
-function initServicesSubmenuKeyboard() {
-  // Ensure the desktop mega-menu opens on focus (keyboard), not just hover.
-  document.querySelectorAll('.has-submenu').forEach((item) => {
-    const submenu = item.querySelector('.submenu');
-    if (!submenu) return;
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        item.querySelector('a')?.focus();
-      }
+function initDesktopServices() {
+  document.querySelectorAll('.has-submenu').forEach(item => {
+    item.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      item.classList.add('is-dismissed');
+      item.querySelector('.site-nav__link')?.focus();
+    });
+    item.addEventListener('focusout', event => {
+      if (!item.contains(event.relatedTarget)) item.classList.remove('is-dismissed');
+    });
+    item.addEventListener('mouseleave', () => {
+      if (!item.contains(document.activeElement)) item.classList.remove('is-dismissed');
     });
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initHeaderScrollState();
-  initMobileNav();
-  initScrollReveal();
-  initServicesSubmenuKeyboard();
-});
+initHeaderScrollState();
+initMobileNav();
+initDesktopServices();

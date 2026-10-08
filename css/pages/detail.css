@@ -1,0 +1,23 @@
+/* Supporting routes share the same editorial rhythm without changing their content structure. */
+main > .container:first-child .breadcrumbs { padding-block: 22px; }
+main > .section:first-child { padding-top: var(--space-8); }
+main > .section:nth-child(even) { border-block: 1px solid var(--color-border); }
+main > .section h1 { letter-spacing: -.025em; }
+main > .section .stack > h2:not(:first-child) { margin-top: var(--space-5); }
+main .container-narrow > img[src*="case-study-banner"] { width: 100%; height: auto; aspect-ratio: 8 / 3; object-fit: cover; }
+main .container-narrow > h2 { border-top: 1px solid var(--color-border); padding-top: var(--space-5); margin-top: var(--space-5); }
+.service-visual { background: var(--color-primary); color: var(--color-text-inverse); border-radius: 20px; padding: clamp(24px, 4vw, 42px); min-height: 300px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+.service-visual__label { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: #98d3c5; }
+.service-visual__title { font: 400 clamp(1.5rem, 3vw, 2.2rem)/1.25 var(--font-display); color: #fff; max-width: 18ch; }
+.service-visual__steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.service-visual__steps span { border-top: 1px solid #589389; padding-top: 14px; font-size: clamp(.7rem, 1.2vw, .9rem); }
+.case-grid { counter-reset: case; }
+.case-grid > a.card { counter-increment: case; }
+.case-grid > a.card::before { content: 'CASE / ' counter(case, decimal-leading-zero); display: block; color: var(--color-accent-text); font: 700 .75rem var(--font-body); letter-spacing: .1em; margin-bottom: 20px; }
+.case-grid .tag { font-size: .75rem; }
+@media (max-width: 767px) {
+  .service-visual { min-height: 240px; }
+  main .container-narrow > img[src*="case-study-banner"] { aspect-ratio: 16 / 9; object-position: left center; }
+}
+
+main .container-narrow p a.text-accent { text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
