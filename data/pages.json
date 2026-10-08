@@ -1,22 +1,145 @@
-[
-  { "slug": "home", "title": "Atikul Islam Rabbi — Founder & CEO of Cyber Infinity", "type": "core" },
-  { "slug": "about", "title": "About Atikul Islam Rabbi", "type": "core" },
-  { "slug": "services", "title": "Services — Social Media Security & Recovery", "type": "hub" },
-  { "slug": "service-facebook-page-recovery", "title": "Facebook Page Recovery", "type": "service" },
-  { "slug": "service-facebook-account-recovery", "title": "Facebook Account Recovery", "type": "service" },
-  { "slug": "service-instagram-account-recovery", "title": "Instagram Account Recovery", "type": "service" },
-  { "slug": "service-meta-business-manager-recovery", "title": "Meta Business Manager Recovery", "type": "service" },
-  { "slug": "service-business-verification-guidance", "title": "Business Verification Guidance", "type": "service" },
-  { "slug": "service-admin-dispute-resolution", "title": "Admin Dispute Resolution", "type": "service" },
-  { "slug": "service-security-consultation", "title": "Security Consultation", "type": "service" },
-  { "slug": "service-social-media-security-audit", "title": "Social Media Security Audit", "type": "service" },
-  { "slug": "case-studies", "title": "Case Studies", "type": "hub" },
-  { "slug": "case-study-zero-idea", "title": "Zero Idea: Facebook Page Recovery", "type": "case-study" },
-  { "slug": "case-study-dinajpur-image", "title": "Dinajpur Image: Case Study", "type": "case-study" },
-  { "slug": "case-study-santali-ari-chari", "title": "Santali Ari-Chari: Case Study", "type": "case-study" },
-  { "slug": "case-study-business-manager-verification-uae", "title": "Business Manager Verification: UAE Case Study", "type": "case-study" },
-  { "slug": "case-study-delicious-food-by-arpa", "title": "Delicious Food by Arpa: Case Study", "type": "case-study" },
-  { "slug": "portfolio", "title": "Portfolio — Technical Work", "type": "core" },
-  { "slug": "faq", "title": "Frequently Asked Questions", "type": "core" },
-  { "slug": "contact", "title": "Contact Atikul Islam Rabbi", "type": "core" }
-]
+{
+  "_note": "Page register generated from the page builder: routes, metadata and OG image for every indexable page. Matches sitemap.xml.",
+  "pages": [
+    {
+      "file": "index.html",
+      "path": "/",
+      "title": "Atikul Islam Rabbi | Social Media Security & Recovery Specialist",
+      "description": "Recovery and security help for Facebook, Instagram and Meta Business Manager accounts. Founder & CEO of Cyber Infinity. Remote, worldwide.",
+      "ogImage": "/assets/img/og/home.jpg"
+    },
+    {
+      "file": "about/index.html",
+      "path": "/about/",
+      "title": "About Atikul Islam Rabbi | Founder & CEO, Cyber Infinity",
+      "description": "Background, mission and working approach of Atikul Islam Rabbi, Founder & CEO of Cyber Infinity and a Social Media Security & Recovery Specialist.",
+      "ogImage": "/assets/img/og/about.jpg"
+    },
+    {
+      "file": "services/index.html",
+      "path": "/services/",
+      "title": "Social Media Security & Recovery Services | Atikul Islam Rabbi",
+      "description": "Eight services for Facebook Pages, personal accounts, Instagram, Meta Business Manager, verification, disputes and security reviews. Remote, worldwide.",
+      "ogImage": "/assets/img/og/services.jpg"
+    },
+    {
+      "file": "case-studies/index.html",
+      "path": "/case-studies/",
+      "title": "Case Studies: Social Media Recovery | Atikul Islam Rabbi",
+      "description": "Five case studies in Facebook Page, Instagram and Business Manager recovery. Each shows the problem, approach, result and limits. No guaranteed outcomes.",
+      "ogImage": "/assets/img/og/case-studies.jpg"
+    },
+    {
+      "file": "portfolio/index.html",
+      "path": "/portfolio/",
+      "title": "Portfolio: Technical Skills | Atikul Islam Rabbi",
+      "description": "Technical skills behind the security work: web development, automation and Python. Supporting context, not the main service.",
+      "ogImage": "/assets/img/og/portfolio.jpg"
+    },
+    {
+      "file": "faq/index.html",
+      "path": "/faq/",
+      "title": "Frequently Asked Questions | Atikul Islam Rabbi",
+      "description": "Short answers on recovery timelines, what information to send, privacy of the contact form, and working with clients worldwide.",
+      "ogImage": "/assets/img/og/faq.jpg"
+    },
+    {
+      "file": "contact/index.html",
+      "path": "/contact/",
+      "title": "Contact | Atikul Islam Rabbi",
+      "description": "Describe your Facebook, Instagram or Meta Business Manager issue. Send a message, email or WhatsApp. Remote support worldwide, no passwords needed.",
+      "ogImage": "/assets/img/og/contact.jpg"
+    },
+    {
+      "file": "services/facebook-page-recovery/index.html",
+      "path": "/services/facebook-page-recovery/",
+      "title": "Facebook Page Recovery | Atikul Islam Rabbi",
+      "description": "Help recovering a hacked, hijacked or lost Facebook Page. Structured review of ownership evidence and Meta's recovery routes. No guaranteed outcomes.",
+      "ogImage": "/assets/img/og/service-facebook-page-recovery.jpg"
+    },
+    {
+      "file": "services/facebook-account-recovery/index.html",
+      "path": "/services/facebook-account-recovery/",
+      "title": "Facebook Account Recovery | Atikul Islam Rabbi",
+      "description": "Help regaining access to a hacked or locked personal Facebook account, with a clear plan for what Meta must verify. No guaranteed outcomes.",
+      "ogImage": "/assets/img/og/service-facebook-account-recovery.jpg"
+    },
+    {
+      "file": "services/instagram-account-recovery/index.html",
+      "path": "/services/instagram-account-recovery/",
+      "title": "Instagram Account Recovery | Atikul Islam Rabbi",
+      "description": "Help recovering a hacked or locked Instagram account, including creator and business accounts. Evidence-based steps and honest limits. No guaranteed outcomes.",
+      "ogImage": "/assets/img/og/service-instagram-account-recovery.jpg"
+    },
+    {
+      "file": "services/meta-business-manager-recovery/index.html",
+      "path": "/services/meta-business-manager-recovery/",
+      "title": "Meta Business Manager Recovery | Atikul Islam Rabbi",
+      "description": "Help restoring control of a hacked or restricted Meta Business Manager and its linked Pages and ad accounts. Clear limits, no guaranteed outcomes.",
+      "ogImage": "/assets/img/og/service-meta-business-manager-recovery.jpg"
+    },
+    {
+      "file": "services/business-verification-guidance/index.html",
+      "path": "/services/business-verification-guidance/",
+      "title": "Business Verification Guidance | Atikul Islam Rabbi",
+      "description": "Guidance for Meta Business Manager verification: clearing restrictions, preparing documents, and submitting correctly. Approval is decided by Meta.",
+      "ogImage": "/assets/img/og/service-business-verification-guidance.jpg"
+    },
+    {
+      "file": "services/admin-dispute-resolution/index.html",
+      "path": "/services/admin-dispute-resolution/",
+      "title": "Admin Dispute Resolution | Atikul Islam Rabbi",
+      "description": "Help resolving disputes over Page and Business Manager admin access. Evidence review and Meta's dispute channels. No guaranteed outcomes.",
+      "ogImage": "/assets/img/og/service-admin-dispute-resolution.jpg"
+    },
+    {
+      "file": "services/security-consultation/index.html",
+      "path": "/services/security-consultation/",
+      "title": "Security Consultation | Atikul Islam Rabbi",
+      "description": "Security consultation for social media accounts and Meta Business Manager setups: access, two-factor settings, and prioritized fixes. Remote, worldwide.",
+      "ogImage": "/assets/img/og/service-security-consultation.jpg"
+    },
+    {
+      "file": "services/social-media-security-audit/index.html",
+      "path": "/services/social-media-security-audit/",
+      "title": "Social Media Security Audit | Atikul Islam Rabbi",
+      "description": "A structured security audit of Facebook, Instagram, and Meta Business Manager access, with a prioritized report. Preventive review, not account recovery.",
+      "ogImage": "/assets/img/og/service-social-media-security-audit.jpg"
+    },
+    {
+      "file": "case-studies/zero-idea-facebook-page-recovery/index.html",
+      "path": "/case-studies/zero-idea-facebook-page-recovery/",
+      "title": "Zero Idea: Facebook Page Recovery Case Study | Atikul Islam Rabbi",
+      "description": "A Facebook Page with a large educational audience was taken over, and the legitimate administrator lost access.",
+      "ogImage": "/assets/img/og/case-zero-idea-facebook-page-recovery.jpg"
+    },
+    {
+      "file": "case-studies/dinajpur-image/index.html",
+      "path": "/case-studies/dinajpur-image/",
+      "title": "Dinajpur Image: Page Restoration Case Study | Atikul Islam Rabbi",
+      "description": "A content page was disabled after trademark and copyright reports that the page owner considered false.",
+      "ogImage": "/assets/img/og/case-dinajpur-image.jpg"
+    },
+    {
+      "file": "case-studies/santali-ari-chari/index.html",
+      "path": "/case-studies/santali-ari-chari/",
+      "title": "Santali Ari-Chari: Page Recovery Case Study | Atikul Islam Rabbi",
+      "description": "A community page was hacked, and its online presence was affected. The result, approach and limits are set out in full.",
+      "ogImage": "/assets/img/og/case-santali-ari-chari.jpg"
+    },
+    {
+      "file": "case-studies/business-manager-verification-uae/index.html",
+      "path": "/case-studies/business-manager-verification-uae/",
+      "title": "Business Manager Verification Case Study | Atikul Islam Rabbi",
+      "description": "A digital marketing business faced repeated Business Manager restrictions and could not complete verification.",
+      "ogImage": "/assets/img/og/case-business-manager-verification-uae.jpg"
+    },
+    {
+      "file": "case-studies/delicious-food-by-arpa/index.html",
+      "path": "/case-studies/delicious-food-by-arpa/",
+      "title": "Delicious Food by Arpa: Case Study | Atikul Islam Rabbi",
+      "description": "A food business faced fake copyright claims, a restricted advertising account, and Business Manager verification issues at the same time.",
+      "ogImage": "/assets/img/og/case-delicious-food-by-arpa.jpg"
+    }
+  ]
+}

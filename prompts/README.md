@@ -1,3 +1,5 @@
+> **Superseded (2026 refresh).** These specifications described the retired image-generation pipeline. The site now uses a deterministic monogram, a route motif, per-page OG cards from `design/`, and no AI imagery. See `docs/asset-pipeline.md` and `docs/audit-2026.md`. Kept for reference only.
+
 # /prompts
 
 Every decorative/illustrative asset on the site is defined here as a JSON spec, organized by asset type. `scripts/build-assets.js` reads every non-deferred spec in this tree, generates the asset, and writes an optimized production file into `/assets/generated/`.

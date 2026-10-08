@@ -1,3 +1,7 @@
+// RETIRED (2026 visual refresh): this generator wrote the superseded illustration/OG set in assets/generated/, which has been removed.
+// OG cards are now rendered from design/og-template.html (see design/README.md). Exiting so nothing is overwritten.
+console.error('This script is retired. See design/README.md and docs/asset-pipeline.md.');
+process.exit(1);
 /**
  * scripts/generate-illustrations.js
  *

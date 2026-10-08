@@ -1,0 +1,128 @@
+{
+  "size": [
+    1200,
+    630
+  ],
+  "cards": [
+    {
+      "slug": "home",
+      "kicker": "Social Media Security & Recovery",
+      "title": "Recovery and security for Facebook, Instagram and Meta Business accounts",
+      "sub": "Atikul Islam Rabbi · Founder & CEO, Cyber Infinity"
+    },
+    {
+      "slug": "about",
+      "kicker": "About",
+      "title": "Atikul Islam Rabbi",
+      "sub": "Founder & CEO, Cyber Infinity · Social Media Security & Recovery Specialist"
+    },
+    {
+      "slug": "services",
+      "kicker": "Services",
+      "title": "Social media security and recovery services",
+      "sub": "Facebook Pages, personal accounts, Instagram, Meta Business Manager, verification, disputes and security reviews"
+    },
+    {
+      "slug": "case-studies",
+      "kicker": "Case studies",
+      "title": "Problem, approach, result and limits",
+      "sub": "Five case studies in Facebook Page, Instagram and Business Manager recovery"
+    },
+    {
+      "slug": "portfolio",
+      "kicker": "Portfolio",
+      "title": "Technical work",
+      "sub": "Web development, automation and security, as supporting skills"
+    },
+    {
+      "slug": "faq",
+      "kicker": "FAQ",
+      "title": "Frequently asked questions",
+      "sub": "Recovery process, what to send, privacy, and working together"
+    },
+    {
+      "slug": "contact",
+      "kicker": "Contact",
+      "title": "Tell me what's happening",
+      "sub": "Describe the problem. Remote support worldwide, based in Bangladesh (UTC+6)"
+    },
+    {
+      "slug": "service-facebook-page-recovery",
+      "kicker": "Recovery",
+      "title": "Facebook Page Recovery",
+      "sub": "Restoring ownership and administrator access to a compromised Facebook Page."
+    },
+    {
+      "slug": "service-facebook-account-recovery",
+      "kicker": "Recovery",
+      "title": "Facebook Account Recovery",
+      "sub": "Regaining access to a hacked or locked personal Facebook account."
+    },
+    {
+      "slug": "service-instagram-account-recovery",
+      "kicker": "Recovery",
+      "title": "Instagram Account Recovery",
+      "sub": "Regaining access to a hacked or locked Instagram account, including creator and business accounts."
+    },
+    {
+      "slug": "service-meta-business-manager-recovery",
+      "kicker": "Recovery",
+      "title": "Meta Business Manager Recovery",
+      "sub": "Restoring control of a hacked or restricted Business Manager and the assets attached to it."
+    },
+    {
+      "slug": "service-business-verification-guidance",
+      "kicker": "Verification and disputes",
+      "title": "Business Verification Guidance",
+      "sub": "Preparing a business for Meta Business Manager verification and clearing what blocks it."
+    },
+    {
+      "slug": "service-admin-dispute-resolution",
+      "kicker": "Verification and disputes",
+      "title": "Admin Dispute Resolution",
+      "sub": "Resolving disputes over who legitimately administers a Page or Business Manager."
+    },
+    {
+      "slug": "service-security-consultation",
+      "kicker": "Security",
+      "title": "Security Consultation",
+      "sub": "Reviewing how your accounts are set up and advising on the gaps most likely to lead to a compromise."
+    },
+    {
+      "slug": "service-social-media-security-audit",
+      "kicker": "Security",
+      "title": "Social Media Security Audit",
+      "sub": "A structured review of administrator access, asset ownership, and account settings, with a prioritized fix list."
+    },
+    {
+      "slug": "case-zero-idea-facebook-page-recovery",
+      "kicker": "Case study",
+      "title": "Zero Idea",
+      "sub": "A Facebook Page with a large educational audience was taken over, and the legitimate administrator lost access."
+    },
+    {
+      "slug": "case-dinajpur-image",
+      "kicker": "Case study",
+      "title": "Dinajpur Image",
+      "sub": "A content page was disabled after trademark and copyright reports that the page owner considered false."
+    },
+    {
+      "slug": "case-santali-ari-chari",
+      "kicker": "Case study",
+      "title": "Santali Ari-Chari",
+      "sub": "A community page was hacked, and its online presence was affected."
+    },
+    {
+      "slug": "case-business-manager-verification-uae",
+      "kicker": "Case study",
+      "title": "Business Manager verification",
+      "sub": "A digital marketing business faced repeated Business Manager restrictions and could not complete verification."
+    },
+    {
+      "slug": "case-delicious-food-by-arpa",
+      "kicker": "Case study",
+      "title": "Delicious Food by Arpa",
+      "sub": "A food business faced fake copyright claims, a restricted advertising account, and Business Manager verification issues at the same time."
+    }
+  ]
+}

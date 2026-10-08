@@ -1,8 +1,41 @@
 {
+  "_note": "Site-wide identity, contact, and profile data. Facts here must match the visible pages. 'unverifiedClaims' is a record only and is NOT published; re-add a claim to the site only with evidence.",
   "name": "Atikul Islam Rabbi",
-  "title": "Founder & CEO of Cyber Infinity",
-  "tagline": "Helping businesses, creators, and organizations recover, secure, and protect their digital assets with security-first solutions.",
-  "profilePhoto": null,
-  "profilePhotoAlt": "Atikul Islam Rabbi, Founder & CEO of Cyber Infinity",
-  "_profilePhotoInstructions": "Set to either a local relative path (e.g. '/assets/images/profile/atikul-islam-rabbi.jpg') or a full URL. src/js/modules/avatar.js swaps the CSS monogram placeholder for a real <img> automatically, with no HTML/CSS/layout change, the moment this is non-null."
+  "primaryIdentity": "Social Media Security & Recovery Specialist",
+  "role": "Founder & CEO",
+  "company": {
+    "name": "Cyber Infinity",
+    "description": "A digital security agency for social media recovery, Meta Business Manager support, digital asset protection, and cybersecurity consulting."
+  },
+  "tagline": "Helping businesses, creators, and organizations recover, secure, and protect their digital assets, with careful, honest, security-first work.",
+  "url": "https://atikulislam.me",
+  "location": "Bangladesh",
+  "timezone": "Asia/Dhaka (UTC+6)",
+  "availability": "Remote, worldwide",
+  "email": "help.atikulislam@gmail.com",
+  "whatsapp": { "display": "+880 1300 228105", "url": "https://wa.me/8801300228105" },
+  "profilePhoto": {
+    "src": "/assets/img/profile-480.webp",
+    "width": 480,
+    "height": 480,
+    "alt": "Portrait of Atikul Islam Rabbi, Founder & CEO of Cyber Infinity",
+    "source": "Owner-supplied photo, resized and compressed only. Not retouched, not AI-generated."
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/atikul-islam-rabbi-275975386/",
+    "https://github.com/atikulislamx",
+    "https://www.upwork.com/freelancers/~0176d6fb5eb6536095",
+    "https://www.facebook.com/atikulislamx",
+    "https://www.instagram.com/atikulislamx/"
+  ],
+  "googleProfile": "https://g.co/kgs/RUh5c5i",
+  "unverifiedClaims": [
+    { "claim": "300+ clients served", "status": "removed", "reason": "Cannot be verified from the repository. Re-add only with a documented source." },
+    { "claim": "20+ countries worked with", "status": "removed", "reason": "Cannot be verified from the repository." },
+    { "claim": "100+ accounts recovered", "status": "removed", "reason": "Cannot be verified from the repository. Also implies outcome rates." },
+    { "claim": "30+ Business Managers recovered", "status": "removed", "reason": "Cannot be verified from the repository." },
+    { "claim": "Upwork 100% Job Success", "status": "removed", "reason": "A platform metric that changes over time. The profile link is kept instead." },
+    { "claim": "Vision: globally recognized digital security brand", "status": "reworded", "reason": "Superlative aspiration. Reworded without the claim." },
+    { "claim": "Direct experience recovering hacked and restricted Business Managers (services copy)", "status": "reworded", "reason": "Experience claim that needs owner confirmation." }
+  ]
 }

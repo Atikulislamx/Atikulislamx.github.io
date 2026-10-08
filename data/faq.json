@@ -1,28 +1,47 @@
 {
+  "_note": "Editorial record for the FAQ page and for FAQPage structured data. The visible answers and the JSON-LD must match.",
   "faqs": [
     {
       "id": "guarantee-recovery",
       "category": "General",
       "question": "Do you guarantee account recovery?",
-      "answer": "No. Recovery depends on the nature of the issue, platform policies, available evidence, and many other factors. Every case is evaluated individually."
+      "answer": "No. Recovery depends on the nature of the issue, platform policies, the evidence available, and decisions that Meta makes. Every case is evaluated individually, and I will tell you early what is realistic."
     },
     {
       "id": "recovery-time",
-      "category": "Recovery Process",
+      "category": "Recovery process",
       "question": "How long does recovery take?",
-      "answer": "Recovery time depends entirely on the complexity of the issue. Some cases can be resolved quickly, while others may require additional investigation or platform review."
+      "answer": "It depends on the issue. Some cases resolve quickly. Others need more investigation or a longer platform review, and I cannot control how long Meta takes to respond."
     },
     {
       "id": "information-required",
-      "category": "Recovery Process",
-      "question": "What information do you require?",
-      "answer": "The required information depends on the specific issue. Only information necessary for diagnosis and recovery will be requested."
+      "category": "Recovery process",
+      "question": "What information do you need?",
+      "answer": "The service page lists what is needed for that service. In general, I ask for the account or Page name, when the problem started, any notices from Meta, and what you have already tried. I only ask for what is needed to assess and plan the case."
+    },
+    {
+      "id": "passwords",
+      "category": "Recovery process",
+      "question": "Do I need to share my password?",
+      "answer": "Not to start a conversation. Please do not send passwords, one-time codes, or recovery codes through the contact form or by message."
+    },
+    {
+      "id": "privacy-sharing",
+      "category": "Privacy",
+      "question": "How is the information I send handled?",
+      "answer": "The contact form sends your message through Web3Forms, a third-party form service, to my email. Share only what is needed for your case, and do not include passwords or codes."
     },
     {
       "id": "international-clients",
-      "category": "Working With Me",
+      "category": "Working with me",
       "question": "Do you work with international clients?",
-      "answer": "Yes. Remote services are available for clients worldwide."
+      "answer": "Yes. Remote services are available worldwide. I am based in Bangladesh (Asia/Dhaka, UTC+6), so please mention your time zone when we arrange a call."
+    },
+    {
+      "id": "individuals-or-businesses",
+      "category": "Working with me",
+      "question": "Do you work with individuals or only businesses?",
+      "answer": "Both. I work with individual account holders, creators, page owners, businesses, and agencies. The service pages say who each service is for."
     }
   ]
 }

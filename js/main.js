@@ -1,93 +1,112 @@
-/**
- * js/main.js
- * Site-wide behavior: sticky header shadow, mobile nav toggle, scroll-reveal.
- * No framework, no build step — plain ES modules loaded via <script type="module">.
- */
+/* ==========================================================================
+   main.js — site-wide behaviour (vanilla JS, no dependencies)
 
-function initHeaderScrollState() {
-  const header = document.querySelector('.site-header');
-  if (!header) return;
-  const onScroll = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 8);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-}
+   Every feature here is an enhancement. The mobile menu, FAQ, and service
+   links work with JavaScript disabled because they use <details> and <a>.
+   Each block checks for its own elements and does nothing if they are absent.
+   ========================================================================== */
+(function () {
+  'use strict';
 
-function initMobileNav() {
-  const toggle = document.querySelector('[data-nav-toggle]');
-  const panel = document.querySelector('[data-mobile-nav]');
-  const closeBtn = document.querySelector('[data-nav-close]');
-  if (!toggle || !panel) return;
+  var doc = document;
+  var html = doc.documentElement;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var desktop = window.matchMedia('(min-width: 1024px)');
 
-  const open = () => {
-    panel.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    panel.querySelector('a, button')?.focus();
-    document.body.style.overflow = 'hidden';
-  };
-  const close = () => {
-    panel.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.focus();
-    document.body.style.overflow = '';
-  };
-
-  toggle.addEventListener('click', () => {
-    const isOpen = panel.classList.contains('is-open');
-    isOpen ? close() : open();
-  });
-  closeBtn?.addEventListener('click', close);
-
-  panel.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
-  });
-
-  // Close the panel when a nav link inside it is activated
-  panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
-}
-
-function initScrollReveal() {
-  const targets = document.querySelectorAll('[data-reveal]');
-  if (!targets.length) return;
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
-    targets.forEach((el) => el.classList.add('is-visible'));
-    return;
+  /* 1. Header: hairline border once the page has scrolled ------------------ */
+  var header = doc.querySelector('[data-site-header]');
+  if (header) {
+    var ticking = false;
+    var updateHeader = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateHeader();
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
+  /* 2. Scroll reveal: only when motion is allowed and observers exist ------- */
+  var revealItems = doc.querySelectorAll('[data-reveal]');
+  if (revealItems.length && !reduceMotion.matches && 'IntersectionObserver' in window) {
+    html.classList.add('reveal-ready');
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          obs.unobserve(entry.target);
         }
       });
-    },
-    { threshold: 0.15 }
-  );
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealItems.forEach(function (el) { observer.observe(el); });
+  }
 
-  targets.forEach((el) => observer.observe(el));
-}
+  /* 3. Desktop Services submenu: disclosure button with aria-expanded ------- */
+  doc.querySelectorAll('[data-submenu]').forEach(function (item) {
+    var toggle = item.querySelector('.site-nav__sub-toggle');
+    if (!toggle) return;
 
-function initServicesSubmenuKeyboard() {
-  // Ensure the desktop mega-menu opens on focus (keyboard), not just hover.
-  document.querySelectorAll('.has-submenu').forEach((item) => {
-    const submenu = item.querySelector('.submenu');
-    if (!submenu) return;
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        item.querySelector('a')?.focus();
+    var setOpen = function (open) {
+      item.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    toggle.addEventListener('click', function () {
+      setOpen(!item.classList.contains('is-open'));
+    });
+
+    item.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && item.classList.contains('is-open')) {
+        setOpen(false);
+        toggle.focus();
       }
     });
-  });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  initHeaderScrollState();
-  initMobileNav();
-  initScrollReveal();
-  initServicesSubmenuKeyboard();
-});
+    item.addEventListener('focusout', function (event) {
+      if (event.relatedTarget && !item.contains(event.relatedTarget)) setOpen(false);
+    });
+
+    doc.addEventListener('click', function (event) {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+  });
+
+  /* 4. Mobile menu (<details>): scroll lock, Escape, focus leaving the menu - */
+  var mobileNav = doc.querySelector('[data-nav-mobile]');
+  if (mobileNav) {
+    var mobileSummary = mobileNav.querySelector('summary');
+
+    mobileNav.addEventListener('toggle', function () {
+      html.classList.toggle('nav-locked', mobileNav.open);
+    });
+
+    mobileNav.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && mobileNav.open) {
+        mobileNav.open = false;
+        if (mobileSummary) mobileSummary.focus();
+      }
+    });
+
+    mobileNav.addEventListener('focusout', function (event) {
+      if (mobileNav.open && event.relatedTarget && !mobileNav.contains(event.relatedTarget)) {
+        mobileNav.open = false;
+      }
+    });
+
+    mobileNav.addEventListener('click', function (event) {
+      if (mobileNav.open && event.target.closest('a')) mobileNav.open = false;
+    });
+
+    doc.addEventListener('click', function (event) {
+      if (mobileNav.open && !mobileNav.contains(event.target)) mobileNav.open = false;
+    });
+
+    desktop.addEventListener('change', function (event) {
+      if (event.matches) mobileNav.open = false;
+    });
+  }
+}());

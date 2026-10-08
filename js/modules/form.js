@@ -1,126 +1,209 @@
-/**
- * js/modules/form.js
- * Contact form submission via Web3Forms (see docs/asset-pipeline.md's sibling
- * decision doc, Master-Blueprint-Final.md §Part 8 — Web3Forms confirmed).
- *
- * IMPORTANT: replace WEB3FORMS_ACCESS_KEY below with a real Web3Forms access
- * key before deployment (https://web3forms.com — free, no backend required).
- * This is a public, client-side key by design for this service; it is not a
- * secret and does not need to be hidden from the page source.
- */
+/* ==========================================================================
+   form.js — contact form: validation, honeypot, submit state, errors
 
-const WEB3FORMS_ACCESS_KEY = '437ef875-ee27-44e0-9884-22910c26316b';
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+   - The Web3Forms access key is public by design (it is sent from the browser
+     and only accepts submissions to the owner's inbox). It is not a secret.
+   - Nothing is stored in the browser (no localStorage, no cookies).
+   - Without JavaScript the form is hidden and the email/WhatsApp fallback
+     is shown instead (see contact/index.html).
+   ========================================================================== */
+(function () {
+  'use strict';
 
-function setFieldError(field, message) {
-  const wrapper = field.closest('.form-field');
-  if (!wrapper) return;
-  wrapper.classList.add('has-error');
-  const errorEl = wrapper.querySelector('.form-error');
-  if (errorEl) errorEl.textContent = message;
-  field.setAttribute('aria-invalid', 'true');
-}
+  var FORM_SELECTOR = '[data-contact-form]';
+  var ENDPOINT = 'https://api.web3forms.com/submit';
+  var ACCESS_KEY = '437ef875-ee27-44e0-9884-22910c26316b';
+  var TIMEOUT_MS = 15000;
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-function clearFieldError(field) {
-  const wrapper = field.closest('.form-field');
-  if (!wrapper) return;
-  wrapper.classList.remove('has-error');
-  field.removeAttribute('aria-invalid');
-}
+  var RULES = {
+    name: function (value) {
+      return value.trim().length < 2 ? 'Please enter your name.' : '';
+    },
+    email: function (value) {
+      var v = value.trim();
+      if (!v) return 'Please enter your email address.';
+      return EMAIL_PATTERN.test(v) ? '' : 'Enter an email address in the format name@example.com.';
+    },
+    service: function (value) {
+      return value ? '' : 'Choose the service closest to your situation.';
+    },
+    message: function (value) {
+      var v = value.trim();
+      if (!v) return 'Please describe what is happening.';
+      return v.length < 20 ? 'Add a little more detail, at least 20 characters.' : '';
+    }
+  };
 
-function validateForm(form) {
-  let isValid = true;
-  const requiredFields = form.querySelectorAll('[required]');
+  /* Field error handling ---------------------------------------------------- */
+  function setFieldError(input, message) {
+    var field = input.closest('.field');
+    var errorEl = field && field.querySelector('.field__error');
+    if (!field || !errorEl) return;
+    errorEl.textContent = message;
+    field.classList.toggle('has-error', Boolean(message));
+    if (message) {
+      input.setAttribute('aria-invalid', 'true');
+    } else {
+      input.removeAttribute('aria-invalid');
+    }
+  }
 
-  requiredFields.forEach((field) => {
-    clearFieldError(field);
-    if (!field.value.trim()) {
-      setFieldError(field, 'This field is required.');
-      isValid = false;
+  function validateField(input) {
+    var rule = RULES[input.name];
+    if (!rule) return '';
+    var message = rule(input.value || '');
+    setFieldError(input, message);
+    return message;
+  }
+
+  function validateForm(form) {
+    var firstInvalid = null;
+    Object.keys(RULES).forEach(function (name) {
+      var input = form.elements.namedItem(name);
+      if (!input) return;
+      if (validateField(input) && !firstInvalid) firstInvalid = input;
+    });
+    return firstInvalid;
+  }
+
+  /* Status panels ------------------------------------------------------------ */
+  function setBusy(form, busy) {
+    var button = form.querySelector('[data-submit]');
+    if (!button) return;
+    var label = button.querySelector('[data-submit-label]');
+    var spinner = button.querySelector('.spinner');
+    button.disabled = busy;
+    button.setAttribute('aria-busy', busy ? 'true' : 'false');
+    if (label) label.textContent = busy ? 'Sending…' : button.getAttribute('data-label');
+    if (spinner) spinner.hidden = !busy;
+  }
+
+  // The error alert sits beside the form (inside the wrapper), so search the wrapper.
+  function errorBox(form) {
+    var wrap = form.closest('[data-form-wrap]') || form;
+    return wrap.querySelector('[data-form-error]');
+  }
+
+  function showError(form) {
+    var box = errorBox(form);
+    if (!box) return;
+    box.hidden = false;
+    box.focus();
+    box.scrollIntoView({ block: 'nearest' });
+  }
+
+  function hideError(form) {
+    var box = errorBox(form);
+    if (box) box.hidden = true;
+  }
+
+  function showSuccess(form) {
+    var wrap = form.closest('[data-form-wrap]');
+    var success = wrap && wrap.querySelector('[data-form-success]');
+    form.hidden = true;
+    if (success) {
+      success.hidden = false;
+      success.focus();
+    }
+  }
+
+  /* Submission ----------------------------------------------------------------- */
+  function serviceLabel(form) {
+    var select = form.elements.namedItem('service');
+    if (!select || select.selectedIndex < 0) return 'General enquiry';
+    return select.options[select.selectedIndex].text;
+  }
+
+  function send(form) {
+    var data = new FormData(form);
+    var name = String(data.get('name') || '').trim();
+
+    data.delete('botcheck');
+    data.set('access_key', ACCESS_KEY);
+    data.set('from_name', name ? 'Website: ' + name : 'Website contact form');
+    data.set('subject', 'New enquiry: ' + serviceLabel(form));
+
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = controller ? window.setTimeout(function () { controller.abort(); }, TIMEOUT_MS) : null;
+
+    setBusy(form, true);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+      signal: controller ? controller.signal : undefined
+    })
+      .then(function (response) {
+        return response.json()
+          .catch(function () { return {}; })
+          .then(function (json) { return { ok: response.ok, json: json }; });
+      })
+      .then(function (result) {
+        if (result.ok && result.json && result.json.success) {
+          showSuccess(form);
+        } else {
+          throw new Error('Submission was not accepted');
+        }
+      })
+      .catch(function () {
+        showError(form);
+      })
+      .then(function () {
+        if (timer) window.clearTimeout(timer);
+        setBusy(form, false);
+      });
+  }
+
+  function onSubmit(event) {
+    event.preventDefault();
+    var form = event.currentTarget;
+    form.setAttribute('data-submitted', 'true');
+    hideError(form);
+
+    var firstInvalid = validateForm(form);
+    if (firstInvalid) {
+      firstInvalid.focus();
       return;
     }
-    if (field.type === 'email') {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(field.value.trim())) {
-        setFieldError(field, 'Please enter a valid email address.');
-        isValid = false;
-      }
+
+    // Honeypot: the checkbox is hidden from people, so a checked box means a bot.
+    // Bots get a success message, but nothing is sent.
+    var honeypot = form.elements.namedItem('botcheck');
+    if (honeypot && honeypot.checked) {
+      showSuccess(form);
+      return;
     }
-  });
 
-  return isValid;
-}
-
-async function handleSubmit(event, form, statusRegion) {
-  event.preventDefault();
-
-  // Honeypot check — a filled hidden field means a bot, not a real visitor.
-  const honeypot = form.querySelector('input[name="botcheck"]');
-  if (honeypot && honeypot.value) {
-    return; // silently drop — no error shown, since this path is bot traffic
+    send(form);
   }
 
-  if (!validateForm(form)) {
-    statusRegion.textContent = 'Please fix the highlighted fields and try again.';
-    statusRegion.className = 'alert alert--danger';
-    form.querySelector('[aria-invalid="true"]')?.focus();
-    return;
-  }
-
-  const submitBtn = form.querySelector('[type="submit"]');
-  const originalLabel = submitBtn.textContent;
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-
-  try {
-    const formData = new FormData(form);
-    formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-
-    const response = await fetch(WEB3FORMS_ENDPOINT, {
-      method: 'POST',
-      body: formData,
+  /* Prefill from ?service=slug (linked from service pages) ------------------- */
+  function prefillService(form) {
+    var select = form.elements.namedItem('service');
+    var wanted = new URLSearchParams(window.location.search).get('service');
+    if (!select || !wanted) return;
+    var match = Array.prototype.find.call(select.options, function (option) {
+      return option.value === wanted;
     });
-    const result = await response.json();
-
-    if (result.success) {
-      form.reset();
-      form.hidden = true;
-      statusRegion.textContent = "Thanks — your message has been sent. I'll get back to you as soon as I can.";
-      statusRegion.className = 'alert alert--success';
-      statusRegion.setAttribute('tabindex', '-1');
-      statusRegion.focus();
-    } else {
-      throw new Error(result.message || 'Submission failed.');
-    }
-  } catch (err) {
-    statusRegion.textContent =
-      "Something went wrong sending your message. Please try again, or email help.atikulislam@gmail.com directly.";
-    statusRegion.className = 'alert alert--danger';
-    statusRegion.setAttribute('tabindex', '-1');
-    statusRegion.focus();
-    console.error('[contact-form]', err);
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalLabel;
+    if (match) select.value = wanted;
   }
-}
 
-function initContactForm() {
-  const form = document.querySelector('[data-contact-form]');
-  if (!form) return;
-  const statusRegion = document.querySelector('[data-form-status]');
+  function init() {
+    var form = document.querySelector(FORM_SELECTOR);
+    if (!form) return;
 
-  form.addEventListener('submit', (e) => handleSubmit(e, form, statusRegion));
+    prefillService(form);
+    form.addEventListener('submit', onSubmit);
 
-  form.querySelectorAll('.form-input, .form-textarea').forEach((field) => {
-    field.addEventListener('blur', () => {
-      if (field.hasAttribute('required') && !field.value.trim()) {
-        setFieldError(field, 'This field is required.');
-      } else {
-        clearFieldError(field);
-      }
-    });
-  });
-}
+    // After a failed attempt, re-check each field as the user corrects it.
+    var revalidate = function (event) {
+      if (form.getAttribute('data-submitted') === 'true') validateField(event.target);
+    };
+    form.addEventListener('blur', revalidate, true);
+    form.addEventListener('change', revalidate, true);
+  }
 
-document.addEventListener('DOMContentLoaded', initContactForm);
+  init();
+}());

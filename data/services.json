@@ -1,92 +1,315 @@
 {
+  "_note": "Editorial record for the eight service pages. The HTML pages are canonical; keep this file in step with them when wording changes.",
   "services": [
     {
       "slug": "facebook-page-recovery",
       "title": "Facebook Page Recovery",
-      "category": "Recovery",
+      "group": "Recovery",
+      "icon": "flag",
+      "cardSummary": "Restoring ownership and administrator access to a compromised Facebook Page.",
       "summary": "Recovering ownership and administrator access to Facebook Pages that have been compromised, hijacked, or lost.",
-      "problem": "Facebook Pages are frequently targeted for takeover, leaving the legitimate administrator locked out — sometimes for extended periods — while the page's content, audience, and reputation remain at risk.",
-      "approach": "I investigate the nature of the compromise, work through Meta's review and verification processes, and focus on restoring legitimate administrator access and securing the page once control is regained.",
-      "expectedOutcomes": "Every case is different, and recovery depends on the nature of the issue, platform policies, and available evidence. I do not guarantee recovery, but I bring a structured, evidence-based approach to every case.",
-      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
-      "relatedCaseStudySlug": "zero-idea-facebook-page-recovery"
+      "problem": "Facebook Pages are frequently targeted for takeover, which can lock the legitimate administrator out while the page's audience and reputation remain at risk.",
+      "approach": "I investigate how the compromise happened, work through Meta's review and verification processes, and focus on restoring legitimate administrator access and securing the page once control is regained.",
+      "whoFor": [
+        "Page owners whose administrator access was removed or changed",
+        "Businesses and creators who can no longer manage a Page they own",
+        "Organizations whose Page was taken over by a former team member or an attacker"
+      ],
+      "process": [
+        { "title": "Tell me what happened", "text": "Use the contact form to describe the problem, when it started, and what you have already tried." },
+        { "title": "I review the evidence", "text": "I check the Page's admin history, the proof of ownership you have, and any Meta notices you received." },
+        { "title": "You get a written plan", "text": "You receive a summary of the routes open for your case, what each one needs, and what I recommend." },
+        { "title": "We work the case and secure it", "text": "We work through Meta's review steps, then tighten admin roles and two-factor settings once access is restored." }
+      ],
+      "send": [
+        "The Page name and URL",
+        "The personal account that is, or was, an admin, if you know it",
+        "When you first noticed the problem, and any Meta notices or emails you received",
+        "Any proof of ownership you have, such as business documents, past admin invitations, or screenshots"
+      ],
+      "limitations": [
+        "Recovery depends on Meta's review, which I cannot control or speed up",
+        "A Page with unresolved policy restrictions can be harder to recover",
+        "I can only work to restore access that you can show is legitimately yours"
+      ],
+      "faqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "caseStudySlugs": ["zero-idea-facebook-page-recovery", "santali-ari-chari", "dinajpur-image"],
+      "related": ["facebook-account-recovery", "admin-dispute-resolution", "social-media-security-audit"],
+      "meta": {
+        "title": "Facebook Page Recovery | Atikul Islam Rabbi",
+        "description": "Help recovering a hacked, hijacked or lost Facebook Page. Structured review of ownership evidence and Meta's recovery routes. No guaranteed outcomes."
+      }
     },
     {
       "slug": "facebook-account-recovery",
       "title": "Facebook Account Recovery",
-      "category": "Recovery",
+      "group": "Recovery",
+      "icon": "user-round",
+      "cardSummary": "Regaining access to a hacked or locked personal Facebook account.",
       "summary": "Recovering compromised or inaccessible personal Facebook accounts.",
-      "problem": "A hacked or disabled personal Facebook account can cut off access to years of connections, business communication, and linked assets like Pages and ad accounts.",
+      "problem": "A hacked or disabled personal Facebook account can cut off years of connections, business communication, and linked assets such as Pages and ad accounts.",
       "approach": "I assess how the account was compromised, guide the ownership-verification process, and work to restore legitimate access while closing the security gap that allowed the compromise.",
-      "expectedOutcomes": "Recovery outcomes vary by case. I do not guarantee recovery, but I apply the same structured process to every account I work on.",
-      "relatedFaqIds": ["guarantee-recovery", "recovery-time"],
-      "relatedCaseStudySlug": null
+      "whoFor": [
+        "People locked out of a personal account after a takeover",
+        "Account holders whose account was disabled and who need to appeal",
+        "Admins of Pages or ad accounts whose access runs through a personal profile"
+      ],
+      "process": [
+        { "title": "Tell me what happened", "text": "Describe the lockout, the email or phone number on the account, and any messages you have received from Facebook." },
+        { "title": "I assess the account", "text": "I look at how access was lost and which verification routes are realistically open." },
+        { "title": "You get a written plan", "text": "You receive the steps, what each one needs from you, and which steps only Meta can complete." },
+        { "title": "We restore access and secure it", "text": "We work through the verification steps, then review passwords, recovery contacts, and two-factor settings." }
+      ],
+      "send": [
+        "The email address or phone number linked to the account",
+        "Any recovery messages or notices you received from Facebook",
+        "When the lockout started, and what changed just before it",
+        "The names of any Pages or ad accounts you manage from this profile"
+      ],
+      "limitations": [
+        "Meta decides whether ownership is verified. I cannot submit identity checks on your behalf",
+        "If the email and phone number on the account are no longer accessible, recovery can take longer",
+        "I do not work around platform controls"
+      ],
+      "faqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "caseStudySlugs": [],
+      "related": ["facebook-page-recovery", "instagram-account-recovery", "security-consultation"],
+      "meta": {
+        "title": "Facebook Account Recovery | Atikul Islam Rabbi",
+        "description": "Help regaining access to a hacked or locked personal Facebook account, with a clear plan for what Meta must verify. No guaranteed outcomes."
+      }
     },
     {
       "slug": "instagram-account-recovery",
       "title": "Instagram Account Recovery",
-      "category": "Recovery",
+      "group": "Recovery",
+      "icon": "camera",
+      "cardSummary": "Regaining access to a hacked or locked Instagram account, including creator and business accounts.",
       "summary": "Recovering compromised or inaccessible Instagram accounts.",
-      "problem": "Instagram account takeovers can lock out creators and businesses from their audience, content history, and any linked Meta Business assets.",
-      "approach": "I investigate the compromise, guide the account-ownership verification process with Meta, and work toward restoring legitimate access.",
-      "expectedOutcomes": "Every case is evaluated individually, and I do not guarantee recovery — but I apply a consistent, evidence-based process to each one.",
-      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
-      "relatedCaseStudySlug": null
+      "problem": "Instagram account takeovers can lock creators and businesses out of their audience, their content history, and any Meta Business assets linked to the account.",
+      "approach": "I investigate the compromise, guide the account-ownership verification process with Meta, and work toward restoring legitimate access, then reduce the chance of a repeat.",
+      "whoFor": [
+        "Creators and brands whose audience and content history are at risk",
+        "Businesses whose Instagram account is linked to a Meta Business Manager",
+        "Account owners locked out after a takeover or a change of email or phone number"
+      ],
+      "process": [
+        { "title": "Tell me what happened", "text": "Share the username, the contact details on the account, and what you noticed first." },
+        { "title": "I assess the account", "text": "I check how access was lost and whether the account is linked to a Page or Business Manager." },
+        { "title": "You get a written plan", "text": "You receive the verification steps, what each needs from you, and which steps only Meta can complete." },
+        { "title": "We restore access and secure it", "text": "We work through the verification steps, then review login alerts, recovery contacts, and two-factor settings." }
+      ],
+      "send": [
+        "The Instagram username",
+        "The email address or phone number linked to the account",
+        "Any login alerts or emails you received",
+        "Whether the account is linked to a Facebook Page or Business Manager"
+      ],
+      "limitations": [
+        "Recovery depends on Meta's ownership verification, which is outside my control",
+        "Accounts with earlier policy violations may face additional review",
+        "I do not work around platform controls"
+      ],
+      "faqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "caseStudySlugs": [],
+      "related": ["facebook-account-recovery", "meta-business-manager-recovery", "social-media-security-audit"],
+      "meta": {
+        "title": "Instagram Account Recovery | Atikul Islam Rabbi",
+        "description": "Help recovering a hacked or locked Instagram account, including creator and business accounts. Evidence-based steps and honest limits. No guaranteed outcomes."
+      }
     },
     {
       "slug": "meta-business-manager-recovery",
       "title": "Meta Business Manager Recovery",
-      "category": "Recovery",
+      "group": "Recovery",
+      "icon": "building-2",
+      "cardSummary": "Restoring control of a hacked or restricted Business Manager and the assets attached to it.",
       "summary": "Recovering hacked or restricted Meta Business Managers, including their linked Pages, ad accounts, and assets.",
-      "problem": "A compromised or restricted Business Manager can affect every asset connected to it at once — Pages, ad accounts, and team access — making this one of the more complex recovery scenarios.",
+      "problem": "A compromised or restricted Business Manager can affect every asset connected to it at once: Pages, ad accounts, and team access. This is one of the more complex recovery scenarios.",
       "approach": "I investigate the scope of the compromise or restriction, work through Meta's Business Manager review and verification processes, and focus on restoring legitimate administrator control across all affected assets.",
-      "expectedOutcomes": "Outcomes depend on the specifics of each Business Manager and the nature of the issue. I do not guarantee recovery, but I bring direct experience recovering hacked and restricted Business Managers to every engagement.",
-      "relatedFaqIds": ["guarantee-recovery", "recovery-time", "information-required"],
-      "relatedCaseStudySlug": "delicious-food-by-arpa"
+      "whoFor": [
+        "Businesses and agencies whose Business Manager was hacked or restricted",
+        "Teams that lost administrator access after a staff change",
+        "Advertisers whose ad accounts are attached to a restricted Business Manager"
+      ],
+      "process": [
+        { "title": "Tell me what happened", "text": "Share the Business Manager ID, the restriction or takeover, and the date it started." },
+        { "title": "I map every linked asset", "text": "We list the Pages, ad accounts, and admins attached, so nothing is missed in the plan." },
+        { "title": "You get a written plan", "text": "You receive the route for each asset, what Meta needs, and which steps depend on Meta's review." },
+        { "title": "We restore control and secure it", "text": "We work through the review steps, then reset admin roles and remove access that should not be there." }
+      ],
+      "send": [
+        "The Business Manager ID, from Business Settings",
+        "The names of the Pages and ad accounts attached to it",
+        "The current admin list, and any admins that were removed or added recently",
+        "Any restriction or review notices from Meta, with dates"
+      ],
+      "limitations": [
+        "Meta's review timelines are outside my control",
+        "A restriction on one linked asset can affect the others",
+        "Business documents must be genuine and current for verification"
+      ],
+      "faqIds": ["guarantee-recovery", "recovery-time", "information-required"],
+      "caseStudySlugs": ["business-manager-verification-uae", "delicious-food-by-arpa"],
+      "related": ["business-verification-guidance", "admin-dispute-resolution", "social-media-security-audit"],
+      "meta": {
+        "title": "Meta Business Manager Recovery | Atikul Islam Rabbi",
+        "description": "Help restoring control of a hacked or restricted Meta Business Manager and its linked Pages and ad accounts. Clear limits, no guaranteed outcomes."
+      }
     },
     {
       "slug": "business-verification-guidance",
       "title": "Business Verification Guidance",
-      "category": "Verification & Disputes",
+      "group": "Verification and disputes",
+      "icon": "clipboard-list",
+      "cardSummary": "Preparing a business for Meta Business Manager verification and clearing what blocks it.",
       "summary": "Guiding businesses through Meta Business Manager verification, including resolving restrictions that block the process.",
-      "problem": "Meta's business verification process can be blocked by prior restrictions, unclear requirements, or incomplete documentation, leaving legitimate businesses unable to verify.",
-      "approach": "I review the current state of the Business Manager, resolve any restrictions standing in the way, and guide the business through preparing for and completing Meta's verification process.",
-      "expectedOutcomes": "Verification outcomes depend on Meta's own review. I do not guarantee approval, but I focus on ensuring the Business Manager is correctly prepared before submission.",
-      "relatedFaqIds": ["guarantee-recovery", "information-required"],
-      "relatedCaseStudySlug": "delicious-food-by-arpa"
+      "problem": "Meta's business verification can be blocked by earlier restrictions, unclear requirements, or incomplete documents, which leaves legitimate businesses stuck.",
+      "approach": "I review the current state of the Business Manager, resolve any restrictions standing in the way, and guide the business through preparing for and completing Meta's verification.",
+      "whoFor": [
+        "Businesses stuck at the verification step",
+        "Agencies verifying a client's Business Manager",
+        "Businesses whose verification was rejected and who need to prepare again"
+      ],
+      "process": [
+        { "title": "Tell me where you are stuck", "text": "Share the verification message you see and the documents you plan to submit." },
+        { "title": "I review the Business Manager", "text": "I check for restrictions and inconsistencies that could block verification." },
+        { "title": "You get a written plan", "text": "You receive the restrictions to clear, the documents needed, and the order to submit them." },
+        { "title": "We submit and follow up", "text": "We submit once the setup is ready, then track Meta's response and handle any follow-up request." }
+      ],
+      "send": [
+        "The legal business name and registration details",
+        "The business website and domain, if any",
+        "The business documents you plan to submit",
+        "Any earlier verification rejection messages"
+      ],
+      "limitations": [
+        "I cannot create or alter business documents",
+        "Verification decisions are made by Meta, not by me",
+        "Some restrictions take time to clear"
+      ],
+      "faqIds": ["guarantee-recovery", "information-required"],
+      "caseStudySlugs": ["business-manager-verification-uae", "delicious-food-by-arpa"],
+      "related": ["meta-business-manager-recovery", "admin-dispute-resolution", "social-media-security-audit"],
+      "meta": {
+        "title": "Business Verification Guidance | Atikul Islam Rabbi",
+        "description": "Guidance for Meta Business Manager verification: clearing restrictions, preparing documents, and submitting correctly. Approval is decided by Meta."
+      }
     },
     {
       "slug": "admin-dispute-resolution",
       "title": "Admin Dispute Resolution",
-      "category": "Verification & Disputes",
+      "group": "Verification and disputes",
+      "icon": "git-compare",
+      "cardSummary": "Resolving disputes over who legitimately administers a Page or Business Manager.",
       "summary": "Resolving disputes over Page or Business Manager administrator access and asset ownership.",
-      "problem": "Disputes over who legitimately administers a Page or Business Manager can leave assets frozen or contested, especially after a change in team, a former employee's continued access, or a takeover attempt.",
+      "problem": "Disputes over who legitimately administers a Page or Business Manager can leave assets frozen or contested, especially after a change in team, a former partner keeping access, or a takeover attempt.",
       "approach": "I review the ownership and administrative history of the asset, help establish legitimate ownership through Meta's dispute and verification channels, and work toward a resolution that restores proper control.",
-      "expectedOutcomes": "Every dispute is evaluated on its own facts. I do not guarantee a specific outcome, but I approach each case with careful documentation and a clear process.",
-      "relatedFaqIds": ["guarantee-recovery", "information-required"],
-      "relatedCaseStudySlug": null
+      "whoFor": [
+        "Businesses where a former partner or employee still controls assets",
+        "Teams with conflicting admin claims after a takeover",
+        "Owners who need to re-establish control of a Page or Business Manager"
+      ],
+      "process": [
+        { "title": "Tell me who is involved", "text": "Describe the asset, the people involved, and the history you know about." },
+        { "title": "I review the history", "text": "I review the admin and ownership record to find what can be shown and by whom." },
+        { "title": "You get a written plan", "text": "You receive the evidence to gather, the Meta route to use, and the likely next steps." },
+        { "title": "We submit and follow the case", "text": "We submit through Meta's channels and track each response until a decision is made." }
+      ],
+      "send": [
+        "The asset name and ID",
+        "The admin history you know about, and who was involved",
+        "Documents that show ownership or authority",
+        "Any communication with the other party or with Meta about the dispute"
+      ],
+      "limitations": [
+        "Disputes are decided by Meta under its own evidence rules",
+        "Outcomes depend on the evidence available and on the other party's position",
+        "I cannot compel another person to hand over access"
+      ],
+      "faqIds": ["guarantee-recovery", "information-required"],
+      "caseStudySlugs": ["dinajpur-image", "delicious-food-by-arpa"],
+      "related": ["facebook-page-recovery", "meta-business-manager-recovery", "business-verification-guidance"],
+      "meta": {
+        "title": "Admin Dispute Resolution | Atikul Islam Rabbi",
+        "description": "Help resolving disputes over Page and Business Manager admin access. Evidence review and Meta's dispute channels. No guaranteed outcomes."
+      }
     },
     {
       "slug": "security-consultation",
       "title": "Security Consultation",
-      "category": "Security",
+      "group": "Security",
+      "icon": "message-square-text",
+      "cardSummary": "Reviewing how your accounts are set up and advising on the gaps most likely to lead to a compromise.",
       "summary": "Advising businesses and creators on strengthening the security of their social media accounts and Business Manager setup.",
-      "problem": "Many account compromises are preventable — weak admin structures, missing two-factor authentication, and unclear asset ownership all increase risk.",
-      "approach": "I review the current security posture of your accounts and Business Manager, identify the specific gaps most likely to lead to compromise, and recommend practical steps to close them.",
-      "expectedOutcomes": "Consultation strengthens your security posture going forward; it does not retroactively address an active compromise, which falls under the relevant recovery service instead.",
-      "relatedFaqIds": ["international-clients"],
-      "relatedCaseStudySlug": null
+      "problem": "Many account compromises are preventable. Weak admin structures, missing two-factor authentication, and unclear asset ownership all increase risk.",
+      "approach": "I review the current security setup of your accounts and Business Manager, identify the gaps most likely to lead to a compromise, and recommend practical steps to close them.",
+      "whoFor": [
+        "Creators and businesses that want to reduce risk before an incident",
+        "Teams that have grown and are not sure who has access to what",
+        "Organizations that recently had an incident and want to harden the setup"
+      ],
+      "process": [
+        { "title": "Tell me your goals", "text": "Describe the accounts in scope, who uses them, and what worries you most." },
+        { "title": "I review the setup", "text": "I review admin roles, two-factor settings, recovery contacts, and connected apps that you share with me." },
+        { "title": "You get prioritized actions", "text": "You receive the gaps ranked by risk, with the steps to close each one." },
+        { "title": "We follow up if needed", "text": "If you want help implementing the changes, we agree on that scope separately." }
+      ],
+      "send": [
+        "The accounts and assets in scope",
+        "Who currently has access, and at what role",
+        "Any recent incidents or suspicious activity"
+      ],
+      "limitations": [
+        "Consultation does not fix an active compromise. That falls under the relevant recovery service",
+        "Recommendations are only as complete as the information you share",
+        "Platform settings change over time, so advice reflects the date of review"
+      ],
+      "faqIds": ["international-clients", "privacy-sharing"],
+      "caseStudySlugs": ["santali-ari-chari"],
+      "related": ["social-media-security-audit", "instagram-account-recovery", "facebook-account-recovery"],
+      "meta": {
+        "title": "Security Consultation | Atikul Islam Rabbi",
+        "description": "Security consultation for social media accounts and Meta Business Manager setups: access, two-factor settings, and prioritized fixes. Remote, worldwide."
+      }
     },
     {
       "slug": "social-media-security-audit",
       "title": "Social Media Security Audit",
-      "category": "Security",
+      "group": "Security",
+      "icon": "scan-search",
+      "cardSummary": "A structured review of administrator access, asset ownership, and account settings, with a prioritized fix list.",
       "summary": "A structured review of your social media and Business Manager accounts to identify security risks before they become incidents.",
-      "problem": "Businesses often don't have visibility into who has access to their Pages, ad accounts, and Business Manager, or which settings leave them exposed.",
-      "approach": "I audit administrator access, asset ownership, and account-level security settings across your Facebook, Instagram, and Business Manager presence, and provide a clear summary of findings and recommendations.",
-      "expectedOutcomes": "An audit identifies risk areas and recommended fixes; it is a preventative service, distinct from active account recovery.",
-      "relatedFaqIds": ["international-clients"],
-      "relatedCaseStudySlug": null
+      "problem": "Businesses often lack a clear view of who has access to their Pages, ad accounts, and Business Manager, or of which settings leave them exposed.",
+      "approach": "I review administrator access, asset ownership, and account-level security settings across your Facebook, Instagram, and Business Manager presence, then provide a clear summary of findings and recommendations.",
+      "whoFor": [
+        "Businesses with several admins, Pages, and ad accounts",
+        "Agencies that manage assets for clients",
+        "Teams preparing for growth, a handover, or a change of staff"
+      ],
+      "process": [
+        { "title": "Define the scope", "text": "We agree which Pages, ad accounts, Business Managers, and Instagram accounts are in scope." },
+        { "title": "Review access and settings", "text": "I review admin and editor roles, asset ownership, and security settings for each asset." },
+        { "title": "You get a prioritized report", "text": "You receive the findings ranked by risk, with the fix for each one." },
+        { "title": "Optional follow-up", "text": "If you want help making the changes, we agree on that scope separately." }
+      ],
+      "send": [
+        "A list of Pages, ad accounts, Business Managers, and Instagram accounts",
+        "The current admin and editor list, by asset",
+        "Any known issues or concerns"
+      ],
+      "limitations": [
+        "An audit identifies risks and fixes. It does not recover accounts",
+        "Findings reflect what was reviewed on the date of the audit",
+        "Some checks depend on the access level you can share"
+      ],
+      "faqIds": ["international-clients", "privacy-sharing"],
+      "caseStudySlugs": [],
+      "related": ["security-consultation", "meta-business-manager-recovery", "admin-dispute-resolution"],
+      "meta": {
+        "title": "Social Media Security Audit | Atikul Islam Rabbi",
+        "description": "A structured security audit of Facebook, Instagram, and Meta Business Manager access, with a prioritized report. Preventive review, not account recovery."
+      }
     }
   ]
 }

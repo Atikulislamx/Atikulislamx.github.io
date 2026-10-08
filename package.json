@@ -10,7 +10,8 @@
     "generate:assets": "node scripts/build-assets.js",
     "generate:assets:force": "node scripts/build-assets.js --force",
     "generate:favicon": "node scripts/generate-favicon.js",
-    "generate:og": "node scripts/generate-og-images.js"
+    "generate:og": "node scripts/generate-og-images.js",
+    "check": "node scripts/check-site.mjs"
   },
   "devDependencies": {
     "sharp": "^0.33.0",
