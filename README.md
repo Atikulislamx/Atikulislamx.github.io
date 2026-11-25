@@ -1,65 +1,84 @@
 # atikulislam.me
 
-Personal and company site for **Atikul Islam Rabbi**, Social Media Security & Recovery Specialist and Founder & CEO of Cyber Infinity. Published with GitHub Pages at <https://atikulislam.me> (see `CNAME`).
+Personal and company site for **Atikul Islam Rabbi** — Social Media Security Expert, Founder & CEO of Cyber Infinity. Published with GitHub Pages at <https://atikulislam.me> (see `CNAME`).
 
-The site is plain static files: HTML, CSS, vanilla JavaScript, and JSON. There is no framework and no build step needed for deployment. The committed HTML is what gets published.
+The published site is plain HTML, one CSS file, one JavaScript file and static assets. The HTML is **generated** from a small Python build so that navigation, schema, metadata and card markup stay identical on every page — the committed output is what GitHub Pages serves (no build step runs at deploy time).
 
-## Quick start
+## The five commands
 
 ```bash
-# Preview locally (any static server works)
-python3 -m http.server 8080      # then open http://localhost:8080
-
-# Optional: install dev tools for the asset scripts
-npm install
-npm run check                    # validate links, metadata, sitemap, JSON-LD, headings, and alt text
+python3 scripts/build_site.py     # regenerate every page, sitemap, robots, manifest
+python3 scripts/preview.py 8000   # preview with the _config.yml excludes enforced
+python3 scripts/generate_og.py    # re-render the 29 OG cards + hero portrait (needs Pillow, fontTools)
+node   scripts/check-site.mjs     # pre-publish validation — must print "no errors"
+npm run release                   # build + check in one step
 ```
 
-Run `npm run check` before every commit. It exits with an error when a local link is broken, a canonical or sitemap entry is wrong, JSON-LD does not parse, a heading level is skipped, an image has no alt text, a new-tab link lacks `rel="noopener noreferrer"`, or placeholder text remains.
+`check-site.mjs` fails on a broken local link, a missing or mismatched canonical, a sitemap entry without a file, a JSON-LD block without `@context`, an `@graph` reference that does not resolve, missing Open Graph or Twitter tags, a skipped heading level, a duplicate title or description, a raw `mailto:` link, a banned junior framing, or any published link into `docs/`, `prompts/`, `scripts/`, `data/` or `design/`.
 
 ## Structure
 
 | Path | What it is |
 |---|---|
-| `index.html` | Homepage: identity, expertise, services, proof, case studies, trust, CTA |
-| `about/`, `faq/`, `portfolio/`, `contact/` | Inner pages |
-| `services/` | Service hub and eight service pages (same template) |
-| `case-studies/` | Case-study hub and five case studies (same template) |
-| `404.html` | Not-found page (`noindex`) |
-| `css/base.css` | Design tokens (colour, type, spacing, radius, motion), fonts, focus, reduced motion |
-| `css/layout.css` | Containers, grids, header and navigation, breadcrumbs, footer |
-| `css/components.css` | Buttons, cards, chips, alerts, forms, FAQ disclosure, steps, facts, CTA band |
-| `css/pages/home.css`, `css/pages/content.css` | Homepage-only styles; styles for all other pages |
-| `js/main.js` | Header state, scroll reveal, desktop submenu, mobile menu. Each part is optional. |
-| `js/modules/form.js` | Contact form: validation, honeypot, submit states, prefill from `?service=` |
-| `assets/brand/` | Favicons, app icons, and the AIR monogram (`favicon.svg` is the source) |
-| `assets/fonts/` | Self-hosted Inter and Fraunces (SIL OFL 1.1) with licences |
-| `assets/icons/` | Icon sprite built from Lucide (ISC licence) |
-| `assets/img/` | Profile photo (WebP), route motif, Open Graph cards (`og/`) |
-| `assets/source/` | Original owner photo, archived. Not referenced by the site. |
-| `design/` | OG card template and card list. See `design/README.md`. |
-| `data/` | Content record: site identity, services, case studies, FAQ, pages. HTML is canonical; keep these in step. |
-| `docs/` | Audit report, deployment checklist, asset notes |
-| `scripts/` | `check-site.mjs` (validator), `generate-favicon.js` (rebuilds PNG and ICO from the SVG) |
-| `prompts/` | Retired image-generation specs, kept for reference |
-| `CNAME`, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `favicon.ico` | Site-level files. Do not rename or move. |
-| `google0a2814688d6877bf.html` | Search Console verification file. Keep unchanged. |
+| `scripts/site_lib.py` | Design-system and schema library: tokens, `head()`, header, footer, cards, `@graph` node builders |
+| `scripts/build_site.py` | Page builders: home, about, services (8), case studies (5), portfolio, FAQ, contact, blog (6 posts), legal, 404, redirect, sitemap, robots, manifest |
+| `scripts/content_blog.py` | Long-form article content for the insights hub |
+| `scripts/generate_og.py` | Renders the 1200×630 OG cards and the hero portrait from `assets/_source/` |
+| `scripts/check-site.mjs` | Pre-publish validator (zero dependencies) |
+| `scripts/preview.py` | Local server that mimics GitHub Pages with the `_config.yml` excludes |
+| `css/site.css` | The whole design system in one file: tokens, layout, components, pages, print |
+| `js/main.js` | Header hairline, mega-menu, mobile drawer, reveal, YouTube facade, email obfuscation, contact form, channel tracking |
+| `data/*.json` | Content sources: services, case studies, FAQ |
+| `assets/` | Fonts (Inter, OFL), icons (Lucide, ISC), brand icons, portrait, OG cards |
+| `_config.yml` | GitHub Pages publishing rules — keeps `docs/`, `prompts/`, `scripts/`, `data/` off the web |
 
-## Editing content
+Generated routes: `/`, `/about/`, `/services/` + 8 service pages, `/case-studies/` + 5 case files, `/portfolio/`, `/blog/` + 6 guides, `/faq/`, `/contact/`, `/privacy-policy/`, `/terms/`, `/404.html`, `/Atikulislamx/` (redirect stub).
 
-- **Edit the HTML directly.** The pages are canonical.
-- **Keep `data/*.json` in step.** It is the content record for services, case studies, and FAQ.
-- **Adding a page:** add it to `sitemap.xml`, give it a canonical, and run `npm run check`.
-- **Adding a case study:** follow the eight-part structure (Problem, Situation, Challenge, Approach, Work, Result, Service, Limitations). Name no client without permission, or anonymize. Do not publish results you cannot document.
-- **Claims:** do not add statistics, testimonials, client names, certifications, or partnerships without evidence. `data/site.json` lists the claims that were removed and why.
-- **Colour and type:** change tokens in `css/base.css`, not individual rules.
-- **Images:** use real photos of the owner only, resized and compressed, never generated or retouched. See `docs/audit-2026.md` section 8.
+## How publishing is scoped
+
+`_config.yml` runs at deploy time on GitHub Pages and excludes the build inputs:
+
+```yaml
+exclude: [docs, prompts, scripts, design, data, README.md, RELEASE.md, package.json, ...]
+include: [.well-known]
+```
+
+`assets/_source/` is ignored automatically (leading underscore) and also listed in the exclude block. `scripts/preview.py` applies the same rules locally, so a path that 404s in the preview will 404 in production.
+
+## Client video testimonials
+
+Four facade cards ship on the homepage and four on `/portfolio/`. Nothing loads from YouTube until the visitor presses play; the click swaps in a `youtube-nocookie` embed with `autoplay=1&rel=0`.
+
+**To add a real video**, edit the `TESTIMONIALS` list in `scripts/build_site.py` and replace the placeholder:
+
+```python
+{"initials": "ZI", "client": "...", "brand": "...", "service": "...",
+ "quote": "...", "yt": "YOUR_VIDEO_ID_HERE", "wide": False},
+```
+
+`yt` takes the 11-character ID from the watch URL (`youtube.com/watch?v=**dQw4w9WgXcQ**`). Set `"wide": True` for a 16:9 clip; leave it `False` for 9:16 Shorts. Then run `python3 scripts/build_site.py`.
+
+Until an ID is set, clicking a card shows "Testimonial video publishing shortly — the written reference below stands" instead of a broken embed. You can also patch `data-youtube-id="..."` directly in the generated HTML, but the next build overwrites it.
 
 ## Contact form
 
-The form posts to Web3Forms with a public access key (`js/modules/form.js`). The key is designed for browser use and is not a secret. Nothing is stored in the browser. Without JavaScript, the form is hidden and the email and WhatsApp details are shown instead.
+`js/main.js` posts JSON to Web3Forms with the access key `437ef875-ee27-44e0-9884-22910c26316b`, a honeypot (`botcheck`), a 15-second `AbortController` timeout, and a `generate_lead` event pushed to `dataLayer` on success (with the chosen service). `?service=<slug>` preselects the topic; the generator and the script both honour it.
 
-## Limits
+Email is base64-encoded in `data-email` attributes and assembled in the browser, which keeps harvesters from reading it out of the HTML. Without JavaScript the form is hidden and the direct channels remain.
 
-- This site describes services. It does not guarantee any recovery outcome.
-- It is independent and not affiliated with Meta Platforms, Inc.
+## Editing content
+
+1. Change the copy in `scripts/build_site.py` / `scripts/content_blog.py`, or the JSON in `data/`.
+2. `python3 scripts/build_site.py`
+3. `node scripts/check-site.mjs`
+4. Commit the generated HTML with the source change.
+
+Never hand-edit the generated pages: the next build replaces them.
+
+## Deployment
+
+GitHub Pages, `main`, `/` (legacy Jekyll build). `CNAME` keeps `atikulislam.me`; HTTPS is enforced. No plugins, no themes, no dependencies at runtime. See [docs/deployment-checklist.md](docs/deployment-checklist.md) for the post-deploy checks, and [docs/audit-2026-11.md](docs/audit-2026-11.md) for the audit this rebuild answers.
+
+## Licences
+
+Inter is licensed under the SIL OFL 1.1 (`assets/fonts/LICENSE-Inter.txt`). The icon sprite is derived from Lucide (ISC). All photographs and client marks belong to their respective owners.

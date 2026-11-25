@@ -1,0 +1,8 @@
+Contact: mailto:help.atikulislam@gmail.com
+Expires: 2027-11-25T00:00:00.000Z
+Preferred-Languages: en, bn
+Canonical: https://atikulislam.me/.well-known/security.txt
+Policy: https://atikulislam.me/terms/#security
+Acknowledgements: https://atikulislam.me/contact/
+# Please report vulnerabilities privately and allow reasonable time to fix
+# before public disclosure.

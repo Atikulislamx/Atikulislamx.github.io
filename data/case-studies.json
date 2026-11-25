@@ -10,7 +10,9 @@
       "location": null,
       "clientNamed": true,
       "anonymizationNote": null,
-      "services": ["facebook-page-recovery"],
+      "services": [
+        "facebook-page-recovery"
+      ],
       "problem": "A Facebook Page with a large educational audience was taken over, and the legitimate administrator lost access.",
       "situation": "Zero Idea is a Facebook Page that publishes science and educational content, with over 400,000 followers.",
       "challenge": "The page was hacked and the administrator was locked out for about two months.",
@@ -24,10 +26,13 @@
       "result": "The page was recovered and the legitimate administrator regained control. The page owner later shared a public video acknowledging the recovery.",
       "keyTakeaway": "Long lockouts can sometimes be resolved with a structured, patient process, even when an attacker has taken control. Results still vary from case to case.",
       "limitations": [
-        "This case reflects one page and one set of circumstances. It does not predict the outcome of another case",
-        "Recovery depended on the evidence of ownership available and on platform decisions"
+        "This case reflects one page and one set of circumstances. It does not predict the outcome of another case.",
+        "Recovery depended on the evidence of ownership available and on platform decisions."
       ],
-      "verifyBeforePublishing": ["Follower count", "Public video reference"]
+      "verifyBeforePublishing": [
+        "Follower count",
+        "Public video reference"
+      ]
     },
     {
       "slug": "dinajpur-image",
@@ -38,10 +43,13 @@
       "location": null,
       "clientNamed": true,
       "anonymizationNote": null,
-      "services": ["facebook-page-recovery", "admin-dispute-resolution"],
+      "services": [
+        "facebook-page-recovery",
+        "admin-dispute-resolution"
+      ],
       "problem": "A content page was disabled after trademark and copyright reports that the page owner considered false.",
       "situation": "Dinajpur Image is a page focused on history and cultural content.",
-      "challenge": "The page was disabled after the reports. The reporting party allegedly demanded money in connection with them.",
+      "challenge": "The page was disabled after those reports. The reports were disputed, and the review turned on proof of ownership and on how each claim had been made.",
       "approach": "I reviewed the ownership and legitimacy of the page, then prepared the verification and dispute process.",
       "work": [
         "Completed ownership verification",
@@ -51,11 +59,13 @@
       "result": "The page was restored.",
       "keyTakeaway": "When reports appear to be false, ownership verification and Meta's dispute process are the proper route. Results still depend on Meta's review.",
       "limitations": [
-        "Dispute outcomes depend on Meta's review and on the evidence provided",
-        "This case does not show how other copyright or trademark disputes will be decided"
+        "Dispute outcomes depend on Meta's review and on the evidence provided.",
+        "This case does not show how other copyright or trademark disputes will be decided."
       ],
       "legalReviewRequired": true,
-      "verifyBeforePublishing": ["Allegation about the reporting party (legal review)"]
+      "verifyBeforePublishing": [
+        "Allegation about the reporting party (legal review)"
+      ]
     },
     {
       "slug": "santali-ari-chari",
@@ -66,7 +76,10 @@
       "location": null,
       "clientNamed": true,
       "anonymizationNote": null,
-      "services": ["facebook-page-recovery", "security-consultation"],
+      "services": [
+        "facebook-page-recovery",
+        "security-consultation"
+      ],
       "problem": "A community page was hacked, and its online presence was affected.",
       "situation": "Santali Ari-Chari is a page dedicated to Santali language and culture.",
       "challenge": "The page was compromised, and the community's online presence was at risk while access was in question.",
@@ -80,8 +93,8 @@
       "result": "The page was recovered and the community's online presence was restored.",
       "keyTakeaway": "For a community page, securing access after recovery matters as much as getting it back.",
       "limitations": [
-        "Recovery steps depended on the evidence of ownership available at the time",
-        "Security improvements reduce risk. They do not remove it"
+        "Recovery steps depended on the evidence of ownership available at the time.",
+        "Security improvements reduce risk. They do not remove it."
       ],
       "verifyBeforePublishing": []
     },
@@ -94,7 +107,10 @@
       "location": "Middle East",
       "clientNamed": false,
       "anonymizationNote": "Client name and identifying details are withheld to protect confidentiality.",
-      "services": ["business-verification-guidance", "meta-business-manager-recovery"],
+      "services": [
+        "business-verification-guidance",
+        "meta-business-manager-recovery"
+      ],
       "problem": "A digital marketing business faced repeated Business Manager restrictions and could not complete verification.",
       "situation": "The business engaged me for Business Manager support.",
       "challenge": "The Business Manager had several restrictions and verification issues.",
@@ -107,10 +123,12 @@
       "result": "The Business Manager was verified.",
       "keyTakeaway": "Verification is often blocked by unresolved restrictions rather than by the verification step itself. Resolving those first is usually the key step.",
       "limitations": [
-        "Client details are withheld, so the case is described in general terms",
-        "Verification decisions are made by Meta. This case does not predict another outcome"
+        "Client details are withheld, so the case is described in general terms.",
+        "Verification decisions are made by Meta. This case does not predict another outcome."
       ],
-      "verifyBeforePublishing": ["Verification result (screenshot or confirmation)"]
+      "verifyBeforePublishing": [
+        "Verification result (screenshot or confirmation)"
+      ]
     },
     {
       "slug": "delicious-food-by-arpa",
@@ -121,7 +139,11 @@
       "location": "Bangladesh",
       "clientNamed": true,
       "anonymizationNote": null,
-      "services": ["business-verification-guidance", "admin-dispute-resolution", "meta-business-manager-recovery"],
+      "services": [
+        "business-verification-guidance",
+        "admin-dispute-resolution",
+        "meta-business-manager-recovery"
+      ],
       "problem": "A food business faced fake copyright claims, a restricted advertising account, and Business Manager verification issues at the same time.",
       "situation": "Delicious Food by Arpa is a food and cake business based in Bangladesh.",
       "challenge": "Several platform issues were blocking each other, so none could be resolved on its own.",
@@ -135,10 +157,13 @@
       "result": "The copyright claims were removed, the advertising restriction was resolved, Business Manager verification was completed, and Facebook Page verification was assisted.",
       "keyTakeaway": "Several connected platform issues can sometimes be handled together in one structured engagement, rather than as separate efforts.",
       "limitations": [
-        "Each issue depended on platform decisions and on the evidence available",
-        "This case does not predict the outcome for another account"
+        "Each issue depended on platform decisions and on the evidence available.",
+        "This case does not predict the outcome for another account."
       ],
-      "verifyBeforePublishing": ["Client permission to name the business", "Written outcome confirmation"]
+      "verifyBeforePublishing": [
+        "Client permission to name the business",
+        "Written outcome confirmation"
+      ]
     }
   ]
 }

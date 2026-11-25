@@ -1,83 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://atikulislam.me/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/atikul-islam-rabbi-social-media-security-expert.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/about/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/about.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/</loc>
-    <lastmod>2026-10-08</lastmod>
-  </url>
-  <url>
-    <loc>https://atikulislam.me/case-studies/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/services.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/portfolio/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/portfolio.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/case-studies/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-studies.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/blog.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/faq/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/faq.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/contact/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/contact.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/privacy-policy/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/privacy.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/terms/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/terms.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/facebook-page-recovery/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-facebook-page-recovery.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/facebook-account-recovery/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-facebook-account-recovery.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/instagram-account-recovery/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-instagram-account-recovery.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/meta-business-manager-recovery/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-meta-business-manager-recovery.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/business-verification-guidance/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-business-verification-guidance.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/admin-dispute-resolution/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-admin-dispute-resolution.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/security-consultation/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-security-consultation.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/services/social-media-security-audit/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/service-social-media-security-audit.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/case-studies/zero-idea-facebook-page-recovery/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-zero-idea-facebook-page-recovery.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/case-studies/dinajpur-image/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-dinajpur-image.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/case-studies/santali-ari-chari/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-santali-ari-chari.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/case-studies/business-manager-verification-uae/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-business-manager-verification-uae.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://atikulislam.me/case-studies/delicious-food-by-arpa/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-25</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/case-delicious-food-by-arpa.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/recover-hacked-facebook-page/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-recover-hacked-facebook-page.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/facebook-account-disabled-appeal/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-facebook-account-disabled-appeal.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/instagram-account-hacked-recovery/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-instagram-account-hacked-recovery.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/meta-business-manager-hacked/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-meta-business-manager-hacked.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/meta-business-verification-documents/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-meta-business-verification-documents.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atikulislam.me/blog/social-media-security-audit-checklist/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://atikulislam.me/assets/img/og/post-social-media-security-audit-checklist.jpg</image:loc>
+    </image:image>
   </url>
 </urlset>
