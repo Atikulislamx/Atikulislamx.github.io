@@ -1,0 +1,30 @@
+# Jekyll configuration for GitHub Pages.
+# The repository root is the web root, so anything not listed here would be
+# published. Keep build inputs and internal documents out of the live site.
+
+title: Atikul Islam Rabbi
+description: Social media security, Meta recovery and digital asset protection.
+
+exclude:
+  - docs
+  - prompts
+  - scripts
+  - design
+  - data
+  - README.md
+  - RELEASE.md
+  - package.json
+  - package-lock.json
+  - node_modules
+  - .vscode
+  - .env.example
+  # Source photo for the hero portrait; underscore dirs are ignored by Jekyll,
+  # this is belt and braces (and documents the intent).
+  - assets/_source
+  - .gitignore
+
+# .well-known starts with a dot, so Jekyll excludes it unless it is included.
+include:
+  - .well-known
+
+plugins: []

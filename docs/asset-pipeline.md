@@ -1,27 +1,27 @@
 # Asset pipeline
 
-The site no longer uses the AI image-generation pipeline. The provider-based scripts (`scripts/build-assets.js`, `scripts/lib/`) remain in the repo for reference, but nothing in the current site depends on them, and `assets/generated/` has been removed.
+Everything the browser loads is a committed static file. There is no runtime build; the Python scripts run on a workstation and their output is committed.
 
-## Where each asset comes from
+## Fonts and icons
 
-| Asset | Source | How to regenerate |
-|---|---|---|
-| Favicons, app icons, `favicon.ico` | `assets/brand/favicon.svg` (monogram with outlined letterforms) | `npm install` then `npm run generate:favicon`. Copy `assets/brand/favicon.ico` to the repo root. |
-| OG cards (`assets/img/og/*.jpg`) | `design/og-template.html` with `design/og-cards.json` | See `design/README.md`. |
-| Profile photo (`assets/img/profile-96.webp`, `profile-480.webp`) | Owner photo, archived at `assets/source/profile-original-512.png` | Resize and compress only, with sharp or any image editor. Do not alter the face. |
-| Route motif (`assets/img/route-motif.svg`) | Hand-written SVG | Edit the file directly. |
-| Icon sprite (`assets/icons/sprite.svg`) | Lucide icons (ISC licence, `assets/icons/LICENSE-Lucide.txt`) | Rebuild from the Lucide package if icons are added. |
-| Fonts (`assets/fonts/*.woff2`) | Fontsource packages `@fontsource-variable/inter` and `@fontsource-variable/fraunces` (SIL OFL 1.1) | Re-subset only if the character set changes. Licence files are in the same folder. |
+- `assets/fonts/inter-latin-var.woff2` — Inter variable (SIL OFL 1.1, `LICENSE-Inter.txt`). One file covers 400–800, so a second family was dropped.
+- `assets/icons/sprite.svg` — Lucide (ISC), `<symbol id="i-…" viewBox="0 0 24 24">`. Referenced as `<svg class="icon"><use href="/assets/icons/sprite.svg#i-play"></use></svg>`. Adding an icon means adding a symbol; the markup only ever references existing ids (checked by `check-site.mjs`).
+- `assets/brand/` — the AIR monogram favicon (SVG source), 16/32 PNG, 180 Apple touch icon, 192 and 512 maskable icons, plus `/favicon.ico` at the root for legacy clients.
 
-## Retired
+## Open Graph cards
 
-- `scripts/build-assets.js`, `npm run generate:assets`, and `npm run generate:assets:force`: the provider-based image pipeline. They need `IMAGE_API_URL` and `IMAGE_API_KEY` and write to `assets/generated/`, which no longer exists.
-- `scripts/generate-og-images.js` (`npm run generate:og`) and `scripts/generate-illustrations.js`: retired. They exit with a message.
-- `prompts/`: image specifications for the retired pipeline. Kept for reference only.
+`scripts/generate_og.py` renders every card and the hero portrait:
 
-## Rules that still apply
+```bash
+pip install Pillow fontTools brotli   # build-time only
+python3 scripts/generate_og.py
+```
 
-- No AI-generated images of the owner. No generated or retouched faces.
-- Images are resized and compressed, never restyled.
-- Every image has alt text (decorative images use `alt=""`). Every image has width and height, and is lazy-loaded unless it is the header avatar.
-- Colour follows `css/base.css` and `prompts/_style-constraints.json`: navy, steel, teal. No neon, glow, padlocks, Matrix effects, masks, or stock imagery.
+- 1200×630 JPEGs in `assets/img/og/` — one per page, service, case study and blog post (29 in total).
+- The card list is derived from the same metadata the pages use (`META`, `SERVICES`, `CASES`, `POSTS`), so a title change is picked up on the next run.
+- Type is Inter (converted from the site's woff2 at build time), against an obsidian ground with cyan and emerald ambient light and a hairline grid — the same language as the site.
+- The portrait is exported from `assets/_source/profile-original-512.png` to `assets/img/atikul-islam-rabbi-social-media-security-expert.jpg`. Do not retouch the face.
+
+## What was removed
+
+The Fraunces display font, the second WebP portrait set, the route motif, the duplicate brand `favicon.ico`, five stylesheets and the Node/sharp asset scripts. They were superseded by the design system, by one portrait and one CSS file, and by the Python renderer above.

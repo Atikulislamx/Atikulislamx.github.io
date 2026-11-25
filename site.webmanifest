@@ -1,12 +1,15 @@
 {
-  "name": "Atikul Islam Rabbi",
+  "id": "/",
+  "name": "Atikul Islam Rabbi \u2014 Social Media Security Expert",
   "short_name": "A. I. Rabbi",
-  "description": "Social media security and recovery specialist.",
+  "description": "Recovery, verification and security for Facebook, Instagram and Meta Business Manager assets.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#F8FAFC",
-  "theme_color": "#0F2A4A",
+  "background_color": "#07090E",
+  "theme_color": "#07090E",
   "icons": [
     {
       "src": "/assets/brand/icon-192.png",
@@ -17,6 +20,12 @@
       "src": "/assets/brand/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

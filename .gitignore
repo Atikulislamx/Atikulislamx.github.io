@@ -1,2 +1,6 @@
 node_modules/
 .env
+
+# Python build cache
+__pycache__/
+*.pyc
